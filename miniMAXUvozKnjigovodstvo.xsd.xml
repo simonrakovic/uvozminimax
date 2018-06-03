@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo"
+targetNamespace="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo" elementFormDefault="qualified">
+  <xs:element name="miniMAXUvozKnjigovodstvo">
+    <xs:complexType>
+      <xs:all minOccurs="0">
+        <xs:element name="Temeljnice" type="TemeljniceCT" minOccurs="0"/>
+        <xs:element name="Stranke" type="StrankeCT" minOccurs="0"/>
+        <xs:element name="Ceniki" type="CenikiCT" minOccurs="0"/>
+        <xs:element name="VrsticeCenika" type="VrsticeCenikaCT" minOccurs="0"/>
+        <xs:element name="Analitike" type="AnalitikeCT" minOccurs="0"/>
+        <xs:element name="Delavci" type="DelavciCT" minOccurs="0"/>
+        <xs:element name="Zapiranja" type="ZapiranjaCT" minOccurs="0"/>
+        <xs:element name="Artikli" type="ArtikliCT" minOccurs="0"/>
+        <xs:element name="Skladisca" type="SkladiscaCT" minOccurs="0"/>
+        <xs:element name="ZacetnaZaloga" type="ZacetnaZalogaCT" minOccurs="0"/>
+        <xs:element name="Nahajalisca" type="NahajaliscaCT" minOccurs="0"/>
+        <xs:element name="OsnovnaSredstva" type="OsnovnaSredstvaCT" minOccurs="0"/>
+        <xs:element name="Zaloge" type="ZalogeCT" minOccurs="0"/>
+        <xs:element name="Narocila" type="NarocilaCT" minOccurs="0"/>
+        <xs:element name="Sestavnice" type="SestavniceCT" minOccurs="0"/>
+        <xs:element name="OdtegljajiDelavca" type="OdtegljajiDelavcaCT" minOccurs="0"/>
+        <xs:element name="VzdrzevaniDruzinskiClaniDelavca" type="VzdrzevaniDruzinskiClaniDelavcaCT" minOccurs="0"/>
+        <xs:element name="AmortizacijskeSkupine" type="AmortizacijskeSkupineCT" minOccurs="0"/>
+        <xs:element name="DopustDelavcev" type="DopustDelavcevCT" minOccurs="0"/>
+        <xs:element name="RacuniStranke" type="RacuniStrankeCT" minOccurs="0"/>
+        <xs:element name="StikiStranke" type="StikiStrankeCT" minOccurs="0"/>
+        <xs:element name="RSKnjigaPK1" type="RSKnjigaPK1VrsticeCT" minOccurs="0"/>
+        <xs:element name="Konti" type="KontiCT" minOccurs="0"/>
+        <xs:element name="BlagovneSkupine" type="BlagovneSkupineCT" minOccurs="0"/>
+        <xs:element name="NaslovnikiStranke" type="NaslovnikiStrankeCT" minOccurs="0"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="Sifra30">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Sifra20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Sifra10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String30Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String30">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String35">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="35"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String36">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="36"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Datum">
+    <xs:restriction base="xs:date">
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Znesek">
+    <xs:restriction base="xs:decimal">
+      <xs:whiteSpace value="collapse"/>
+      <xs:totalDigits value="19"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Decimal19_2">
+    <xs:restriction base="xs:decimal">
+      <xs:whiteSpace value="collapse"/>
+      <xs:totalDigits value="19"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Decimal19_2Positive">
+    <xs:restriction base="xs:decimal">
+      <xs:whiteSpace value="collapse"/>
+      <xs:totalDigits value="19"/>
+      <xs:fractionDigits value="2"/>
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Kolicina">
+    <xs:restriction base="xs:decimal">
+      <xs:whiteSpace value="collapse"/>
+      <xs:totalDigits value="18"/>
+      <xs:fractionDigits value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String3">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String3Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String11">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="11"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String11Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="11"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String7">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String7Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String19">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="19"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String24">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="24"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String1">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String1Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EMSO">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="13"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Davcna">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="12"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String5">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String5Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String60">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="60"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String100">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String100Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Leto">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="1900"/>
+      <xs:maxInclusive value="3000"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdentifikacijskaStevilka">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="14"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Odstotek">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="2"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String50Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String250Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="250"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String4">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String4Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String2">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String2Required">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+      <xs:minLength value="1"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String17">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="17"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String1000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1000"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String8000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="8000"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String2000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2000"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String3000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3000"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String250">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="250"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="StrankeCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Stranka" type="StrankaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StrankaCT" mixed="true">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="Sifra10"/>
+      <xs:element name="Naziv" type="String100Required"/>
+      <xs:element name="Naslov" type="String250" minOccurs="0"/>
+      <xs:element name="KraticaDrzave" type="String3" minOccurs="0"/>
+      <xs:element name="NazivDrzave" type="String250" minOccurs="0"/>
+      <xs:element name="PostnaStevilka" type="String30" minOccurs="0"/>
+      <xs:element name="NazivPoste" type="String250" minOccurs="0"/>
+      <xs:element name="DavcniZavezanec" type="String1" minOccurs="0"/>
+      <xs:element name="DavcnaStevilka" type="Davcna" minOccurs="0"/>
+      <xs:element name="MaticnaStevilka" type="String30" minOccurs="0"/>
+      <xs:element name="SifraDejavnosti" type="String10" minOccurs="0"/>
+      <xs:element name="IdentifikacijskaStevilka" type="IdentifikacijskaStevilka" minOccurs="0"/>
+      <xs:element name="SifraDenarneEnote" type="String3" minOccurs="0"/>
+      <xs:element name="SifraCenika" type="String30" minOccurs="0"/>
+      <xs:element name="DneviZaZapadlost" type="xs:int" minOccurs="0"/>
+      <xs:element name="OdstotekRabata" type="Odstotek" default="0" minOccurs="0"/>
+      <xs:element minOccurs="0" name="TransakcijskiRacun" type="String20" />
+      <xs:element minOccurs="0" name="Stik" type="String30" />
+      <xs:element minOccurs="0" name="Telefon" type="String30" />
+      <xs:element minOccurs="0" name="EPosta" type="String50" />
+      <xs:element minOccurs="0" name="Faks" type="String30" />
+      <xs:element name="SpletnaStran" type="String100" minOccurs="0"/>
+      <xs:element name="Opomba" type="String8000" minOccurs="0"/>
+      <xs:element name="Uporaba" type="String1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CenikiCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Cenik" type="CenikCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CenikCT" mixed="true">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="Sifra30"/>
+      <xs:element name="NabavniProdajni" type="String1Required"/>
+      <xs:element name="Naziv" type="String250" minOccurs="0"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="SifraDenarneEnote" type="String3" minOccurs="0"/>
+      <xs:element name="Opis" type="String1000" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VrsticeCenikaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="VrsticaCenika" type="VrsticaCenikaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VrsticaCenikaCT" mixed="true">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraCenika" type="Sifra30"/>
+      <xs:element name="SifraArtikla" type="Sifra30"/>
+      <xs:element name="Naziv" type="String250" minOccurs="0"/>
+      <xs:element name="MerskaEnota" type="String3" minOccurs="0"/>
+      <xs:element name="Cena" type="Kolicina" default="0" minOccurs="0"/>
+      <xs:element name="OdstotekPopusta" type="Odstotek" default="0" minOccurs="0"/>
+      <xs:element name="Opis" type="String1000" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnalitikeCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Analitika" type="AnalitikaCT" nillable="true" id="Analitika" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnalitikaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="Sifra10"/>
+      <xs:element name="Naziv" type="String30Required"/>
+      <xs:element name="SifraVisjeAnalitike" type="String10" minOccurs="0"/>
+      <xs:element name="DatumKoncaUporabe" type="Datum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KontiCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Konto" type="KontoCT" nillable="true" id="Konto" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KontoCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="String30Required"/>
+      <xs:element name="Naziv" type="String1000"/>
+      <xs:element name="Opis" type="String1000" minOccurs="0"/>
+      <xs:element name="DovoljenoKnjizenje" type="String1Required"/>
+      <xs:element name="KnjizenjeRacuna" type="String1Required"/>
+      <xs:element name="Analitika" type="String1Required"/>
+      <xs:element name="Delavec" type="String1Required"/>
+      <xs:element name="Stranka" type="String1Required"/>
+      <xs:element name="DavcnoNepriznan" type="String1Required"/>
+      <xs:element name="PrepovedUporabe" type="String1" minOccurs="0"/>
+      <xs:element name="KontoIzpiska" type="String1" minOccurs="0"/>
+      <xs:element name="OpisIzpiska" type="String1000" minOccurs="0"/>
+      <xs:element name="VeljavnostOd" type="Datum" minOccurs="0" />
+      <xs:element name="VeljavnostDo" type="Datum" minOccurs="0" />
+      <xs:element name="SifraStaregaKonta" type="String30" minOccurs="0"/>
+      <xs:element name="SifraNovegaKonta" type="String30" minOccurs="0"/>
+      <xs:element name="StolpecPK1Breme" type="String30" minOccurs="0"/>
+      <xs:element name="StolpecPK1BremeOperacija" type="String1" minOccurs="0"/>
+      <xs:element name="StolpecPK1Dobro" type="String30" minOccurs="0"/>
+      <xs:element name="StolpecPK1DobroOperacija" type="String1" minOccurs="0"/>
+      <xs:element name="DavekNaFinancneStoritve" type="String1" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DelavciCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Delavec" type="DelavecCT" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DelavecCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="Sifra10"/>
+      <xs:element name="Ime" type="String30"  minOccurs="0"/>
+      <xs:element name="Priimek" type="String250"  minOccurs="0"/>
+      <xs:element name="DatumRojstva" type="Datum"  minOccurs="0"/>
+      <xs:element name="Spol" type="String1"  minOccurs="0"/>
+      <xs:element name="EMSO" type="String30"  minOccurs="0"/>
+      <xs:element name="DavcnaStevilka" type="Davcna"  minOccurs="0"/>
+      <xs:element name="Naslov" type="String250"  minOccurs="0"/>
+      <xs:element name="PostnaStevilka" type="String30"  minOccurs="0"/>
+      <xs:element name="NazivPoste" type="String250"  minOccurs="0"/>
+      <xs:element name="KraticaDrzavePrebivanja" type="String250"  minOccurs="0"/>
+      <xs:element name="KraticaDrzaveRezidentstva" type="String250"  minOccurs="0"/>
+      <xs:element name="ZacetekIBAN" type="String30"  minOccurs="0"/>
+      <xs:element name="TransakcijskiRacun" type="String250"  minOccurs="0"/>
+      <xs:element name="BIC" type="String30"  minOccurs="0"/>
+      <xs:element name="DelitevZacetekIBAN" type="String30"  minOccurs="0"/>
+      <xs:element name="DelitevTransakcijskiRacun" type="String250"  minOccurs="0"/>
+      <xs:element name="DelitevBIC" type="String30"  minOccurs="0"/>
+      <xs:element name="DelitevOdstotek" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="DelitevVrednost" type="Znesek"  minOccurs="0"/>
+      <xs:element name="DelitevZascitenRacun" type="String1"  minOccurs="0"/>
+      <xs:element name="SifraAnalitike" type="String250"  minOccurs="0"/>
+      <xs:element name="VrstaZaposlitve" type="String30"  minOccurs="0"/>
+      <xs:element name="DatumZaposlitve" type="Datum"  minOccurs="0"/>
+      <xs:element name="DatumPrekinitve" type="Datum"  minOccurs="0"/>
+      <xs:element name="DatumZaposlitveDolocenCas" type="Datum"  minOccurs="0"/>
+      <xs:element name="DatumPrekinitveDolocenCas" type="Datum"  minOccurs="0"/>
+      <xs:element name="ZavarovalnaPodlaga" type="String30"  minOccurs="0"/>
+      <xs:element name="ZavarovalnaOsnova" type="String30"  minOccurs="0"/>
+      <xs:element name="ZnesekZavarovalneOsnove" type="Znesek"  minOccurs="0"/>
+      <xs:element name="UveljavljanjeZnizanjaZavarovalneOsnove" type="String1"  minOccurs="0"/>
+      <xs:element name="OdstotekZnizanjaZavarovalneOsnove" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="ObracunOdVisjeZavarovalneOsnove" type="String1"  minOccurs="0"/>
+      <xs:element name="ZnesekVisjeZavarovalneOsnove" type="Znesek"  minOccurs="0"/>
+      <xs:element name="PrispevkiOdtegnejoOdNagrade" type="String1"  minOccurs="0"/>
+      <xs:element name="ZavarovalnaDobaSPovecanjem" type="String30"  minOccurs="0"/>
+      <xs:element name="PrispevekZaPokojninskoII" type="String1"  minOccurs="0"/>
+      <xs:element name="OsnovaZaUrnoPostavko" type="String1"  minOccurs="0"/>
+      <xs:element name="VrednostOsnoveZaUrnoPostavko" type="Kolicina"  minOccurs="0"/>
+      <xs:element name="OsnovaZaPrevozNaDelo" type="String1"  minOccurs="0"/>
+      <xs:element name="VrednostOsnoveZaPrevozNaDelo" type="Znesek"  minOccurs="0"/>
+      <xs:element name="SteviloUrZaposlitveNaTeden" type="xs:int"  minOccurs="0"/>
+      <xs:element name="SteviloDniZaposlitveNaTeden" type="xs:int"  minOccurs="0"/>
+      <xs:element name="LetniSkladUr" type="xs:int"  minOccurs="0"/>
+      <xs:element name="KolektivnaPogodba" type="String1"  minOccurs="0"/>
+      <xs:element name="ObracunAvtomatskihIzplacil" type="String1"  minOccurs="0"/>
+      <xs:element name="ZnesekRegresa" type="Znesek"  minOccurs="0"/>
+      <xs:element name="OdstotekZaposlitveVOrganizaciji" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="OdstotekZaposlitveDrugje" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="LetaDelovneDobePredZaposlitvijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="MeseciDelovneDobePredZaposlitvijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="DneviDelovneDobePredZaposlitvijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="LetaDelovneDobeVOrganizacijiPredZaposlitvijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="MeseciDelovneDobeVOrganizacijiPredZaposlitvijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="DneviDelovneDobeVOrganizacijiPredZaposlitvijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="LetoUrnePostavkeZaRefundacijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="SplosnaOlajsava" type="String1"  minOccurs="0"/>
+      <xs:element name="ZnesekSplosneOlajsave" type="Znesek"  minOccurs="0"/>
+      <xs:element name="KoeficientOlajsave" type="Znesek"  minOccurs="0"/>
+      <xs:element name="OsebnaOlajsavaZaInvalidnost" type="String1"  minOccurs="0"/>
+      <xs:element name="GlavniDelodajalec" type="String1"  minOccurs="0"/>
+      <xs:element name="OdstotekDohodnineRegres" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="OprostitevDavkaMednarodnePogodbe" type="String1"  minOccurs="0"/>
+      <xs:element name="OdstotekDavkaMednarodnePogodbe" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="StPotrdilaMednarodnePogodbe" type="String250"  minOccurs="0"/>
+      <xs:element name="VrstaSubvencije" type="String30"  minOccurs="0"/>
+      <xs:element name="SubvencijaOd" type="Datum"  minOccurs="0"/>
+      <xs:element name="SubvencijaDo" type="Datum"  minOccurs="0"/>
+      <xs:element name="StevilkaZaSubvencijo" type="xs:int"  minOccurs="0"/>
+      <xs:element name="Invalidnina" type="String1"  minOccurs="0"/>
+      <xs:element name="InvalidNadKvoto" type="String1"  minOccurs="0"/>
+      <xs:element name="StevilkaZadeveZaInvalidnino" type="String30"  minOccurs="0"/>
+      <xs:element name="OdstotekInvalidnine" type="Odstotek"  minOccurs="0"/>
+      <xs:element name="ZnesekInvalidnine" type="Znesek"  minOccurs="0"/>
+      <xs:element name="SifraObcine" type="String250"  minOccurs="0"/>
+      <xs:element name="DrzavaDelovnegaMesta" type="String250"  minOccurs="0"/>
+      <xs:element name="SifraObcineDelovnegaMesta" type="String250"  minOccurs="0"/>
+      <xs:element name="SifraDavcneUprave" type="String250"  minOccurs="0"/>
+      <xs:element name="SifraZavodaZaZdravstvo" type="String250"  minOccurs="0"/>
+      <xs:element name="StevilkaZaZavodZaZdravstvo" type="String30"  minOccurs="0"/>
+      <xs:element name="StevilkaZaZavodZaPokojnino" type="String30"  minOccurs="0"/>
+      <xs:element name="StevilkaZdravstveneKnjizice" type="String30"  minOccurs="0"/>
+      <xs:element name="Opomba" type="String8000"  minOccurs="0"/>
+      <xs:element name="Uporaba" type="String1"  minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OdtegljajiDelavcaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="OdtegljajDelavca" type="OdtegljajDelavcaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OdtegljajDelavcaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraDelavca" type="Sifra10"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="Vrsta" type="String1" minOccurs="0"/>
+      <xs:element name="Vrednost" type="Znesek" minOccurs="0"/>
+      <xs:element name="Namen" type="String30" minOccurs="0"/>
+      <xs:element name="Model" type="String2" minOccurs="0"/>
+      <xs:element name="Sklic" type="String24" minOccurs="0"/>
+      <xs:element name="DatumZacetka" type="Datum" minOccurs="0"/>
+      <xs:element name="DatumKonca" type="Datum" minOccurs="0"/>
+      <xs:element name="CelotniZnesekOdtegljaja" type="Znesek" minOccurs="0"/>
+      <xs:element name="PredhodnoOdplacaniObroki" type="xs:int" minOccurs="0"/>
+      <xs:element name="PredhodnoOdplacaniObrokiVZnesku" type="Znesek" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VzdrzevaniDruzinskiClaniDelavcaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="VzdrzevanDruzinskiClanDelavca" type="VzdrzevanDruzinskiClanDelavcaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VzdrzevanDruzinskiClanDelavcaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraDelavca" type="Sifra10"/>
+      <xs:element name="Ime" type="String30Required"/>
+      <xs:element name="Priimek" type="String30Required"/>
+      <xs:element name="DatumRojstva" type="Datum" minOccurs="0"/>
+      <xs:element name="DavcnaStevilkaDruzinskegaClana" type="Davcna"/>
+      <xs:element name="OznakaVzdrzevanegaDruzinskegaClana" type="String2" minOccurs="0"/>
+      <xs:element name="VzdrzevanOd" type="Datum" minOccurs="0"/>
+      <xs:element name="VzdrzevanDo" type="Datum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TemeljniceCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Temeljnica" type="TemeljnicaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TemeljnicaCT">
+    <xs:sequence>
+      <xs:element name="GlavaTemeljnice" type="GlavaTemeljniceCT" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="DDVSI" type="DDVSICT" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="DDV" type="DDVCT" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="VrsticeTemeljnice" type="VrsticeTemeljniceCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GlavaTemeljniceCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraVrsteTemeljnice" type="String4" minOccurs="0"/>
+      <xs:element name="DatumTemeljnice" type="Datum"/>
+      <xs:element name="OpisGlaveTemeljnice" type="String250" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDVCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DDVVrstica" type="DDVVrsticaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDVVrsticaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="DDVGlava" type="DDVGlavaCT" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="DDVStopnje" type="DDVStopnjeCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDVGlavaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="DatumDDV" type="Datum" minOccurs="0"/>
+      <xs:element name="KnjigaDDV" type="String10" minOccurs="0"/>
+      <xs:element name="VrstaObracunaDDV" type="String10" minOccurs="0"/>
+      <xs:element name="DatumKnjizenjaDDV" type="Datum" minOccurs="0"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="SifraAnalitike" type="String10" minOccurs="0"/>
+      <xs:element name="Listina" type="String30" minOccurs="0"/>
+      <xs:element name="DatumListine" type="Datum" minOccurs="0"/>
+      <xs:element name="DatumPrejema" type="Datum" minOccurs="0"/>
+      <xs:element name="DatumPlacila" type="Datum" minOccurs="0"/>
+      <xs:element name="OsnovnoSredstvo" type="Znesek" minOccurs="0"/>
+      <xs:element name="Nepremicnina" type="Znesek" minOccurs="0"/>
+      <xs:element name="Samoobdavcitev" type="String1" minOccurs="0"/>
+      <xs:element name="Avans" type="String1" minOccurs="0"/>
+      <xs:element name="StevilkaKnjizbe" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDVStopnjeCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="DDVStopnja" type="DDVStopnjaCT" minOccurs="0" maxOccurs="unbounded">
+        <xs:unique name="testUnique">
+          <xs:selector xpath="DDVStopnja"/>
+          <xs:field xpath="SifraStopnjeDDV"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>  
+  </xs:complexType>
+  <xs:complexType name="DDVStopnjaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraStopnjeDDV" type="String30" minOccurs="0"/>
+      <xs:element name="Osnova" type="Znesek" minOccurs="0"/>
+      <xs:element name="DDV" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDVOsnova" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDV" type="Znesek" minOccurs="0"/>
+      <xs:element name="StoritevOsnova" type="Znesek" minOccurs="0"/>
+      <xs:element name="StoritevDDV" type="Znesek" minOccurs="0"/>
+      <xs:element name="StoritevNeodbitiDDVOsnova" type="Znesek" minOccurs="0"/>
+      <xs:element name="StoritevNeodbitiDDV" type="Znesek" minOccurs="0"/>
+    
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDVSICT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DDVSIVrstica" type="DDVSIVrsticaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDVSIVrsticaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraKnjigeDDV" type="String10" minOccurs="0"/>
+      <xs:element name="DatumZaDDV" type="Datum" minOccurs="0"/>
+      <xs:element name="SifraVrsteObracunaDDV" type="String10" minOccurs="0"/>
+      <xs:element name="DatumKnjizenjaDDV" type="Datum" minOccurs="0"/>
+      <xs:element name="Listina" type="String30" minOccurs="0"/>
+      <xs:element name="DatumListineZaDDV" type="Datum" minOccurs="0"/>
+      <xs:element name="DatumPrejema" type="Datum" minOccurs="0"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="Samoobdavcitev" type="String1" minOccurs="0"/>
+      <xs:element name="OsnovaObracunanegaDDVPoSplosniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="ObracunanDDVPoSplosniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaNeodbitegaDDVPoSplosniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDVPoSplosniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaObracunanegaDDVPoZnizaniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="ObracunanDDVPoZnizaniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaNeodbitegaDDVPoZnizaniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDVPoZnizaniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaObracunanegaDDVPoPavsalniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="ObracunanDDVPoPavsalniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaNeodbitegaDDVPoPavsalniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDVPoPavsalniStopnji" type="Znesek" minOccurs="0"/>
+      <xs:element name="Oprosceno" type="Znesek" minOccurs="0"/>
+      <xs:element name="DrugeOprostitve" type="Znesek" minOccurs="0"/>
+      <xs:element name="Neobdavceno" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaObracunanegaDDVPoSplosniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="ObracunanDDVPoSplosniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaNeodbitegaDDVPoSplosniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDVPoSplosniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaObracunanegaDDVPoZnizaniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="ObracunanDDVPoZnizaniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovaNeodbitegaDDVPoZnizaniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeodbitiDDVPoZnizaniStopnjiStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="OproscenoStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="NeobdavcenoStoritev" type="Znesek" minOccurs="0"/>
+      <xs:element name="OsnovnoSredstvo" type="Znesek" minOccurs="0"/>
+      <xs:element name="Nepremicnina" type="Znesek" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VrsticeTemeljniceCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="VrsticaTemeljnice" type="VrsticaTemeljniceCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VrsticaTemeljniceCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="DatumKnjizbe" type="Datum" minOccurs="0"/>
+      <xs:element name="OpisVrsticeTemeljnice" type="String250" minOccurs="0"/>
+      <xs:element name="SifraKonta" type="String30Required" nillable="true" minOccurs="0"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="SifraAnalitike" type="String10" minOccurs="0"/>
+      <xs:element name="SifraDelavca" type="String10" minOccurs="0"/>
+      <xs:element name="DatumZapadlosti" type="Datum" minOccurs="0"/>
+      <xs:element name="DatumOpravljanja" type="Datum" nillable="true" minOccurs="0"/>
+      <xs:element name="VezaZaPlacilo" type="String30" minOccurs="0"/>
+      <xs:element name="SifraDenarneEnote" type="String10" minOccurs="0"/>
+      <xs:element name="ZnesekVBremeVDenarniEnoti" type="Znesek" minOccurs="0"/>
+      <xs:element name="ZnesekVDobroVDenarniEnoti" type="Znesek" minOccurs="0"/>
+      <xs:element name="ZnesekVBremeVDomaciDenarniEnoti" type="Znesek" minOccurs="0"/>
+      <xs:element name="ZnesekVDobroVDomaciDenarniEnoti" type="Znesek" minOccurs="0"/>
+      <xs:element name="StevilkaKnjizbe" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZapiranjaCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Zapiranje" type="ZapiranjeCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZapiranjeCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="StevilkaZapiraneKnjizbe" type="xs:int" minOccurs="0"/>
+      <xs:element name="StevilkaZapirajoceKnjizbe" type="xs:int" minOccurs="0"/>
+      <xs:element name="Znesek" type="Znesek" minOccurs="0"/>
+      <xs:element name="ZnesekVDomaciDenarniEnoti" type="Znesek" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NahajaliscaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Nahajalisce" type="NahajalisceCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NahajalisceCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="Sifra10"/>
+      <xs:element name="Naziv" type="String30Required"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OsnovnaSredstvaCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="OsnovnoSredstvo" type="OsnovnoSredstvoCT" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArtikliCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Artikel" type="ArtikelCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArtikelCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraArtikla" type="Sifra30"/>
+      <xs:element name="Koda" type="String30" minOccurs="0"/>
+      <xs:element name="Naziv" type="String250Required"/>
+      <xs:element name="MerskaEnota" type="String3" minOccurs="0"/>
+      <xs:element name="SifraBlagovneSkupine" type="String30" minOccurs="0"/>
+      <xs:element name="Tip" type="String2" minOccurs="0"/>
+      <xs:element name="TipDPU" type="String1" minOccurs="0"/>
+      <xs:element name="StopnjaDDV" type="String30" minOccurs="0"/>
+      <xs:element name="Cena" type="Kolicina" minOccurs="0"/>
+      <xs:element name="SifraDenarneEnote" type="String3" minOccurs="0"/>
+      <xs:element name="SerijskeStevilke" type="String1" minOccurs="0"/>
+      <xs:element name="Serije" type="String1" minOccurs="0"/>
+      <xs:element name="SifraKontaPrihodkaDoma" type="String30" minOccurs="0"/>
+      <xs:element name="SifraKontaPrihodkaEU" type="String30" minOccurs="0"/>
+      <xs:element name="SifraKontaPrihodkaTuji" type="String30" minOccurs="0"/>
+      <xs:element name="SifraKontaZaloge" type="String30" minOccurs="0"/>
+      <xs:element name="Opis" type="String8000" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SestavniceCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Sestavnica" type="SestavnicaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SestavnicaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SestavljenArtikel" type="Sifra30"/>
+      <xs:element name="SifraArtikla" type="Sifra30"/>
+      <xs:element name="Kolicina" type="Kolicina" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkladiscaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Skladisce" type="SkladisceCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkladisceCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="Sifra10"/>
+      <xs:element name="Naziv" type="String30Required"/>
+      <xs:element name="SePredlaga" type="String1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZacetnaZalogaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="ZacetnaZalogaArtikla" type="ZacetnaZalogaArtiklaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZacetnaZalogaArtiklaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraArtikla" type="Sifra30"/>
+      <xs:element name="Kolicina" type="Kolicina" minOccurs="0"/>
+      <xs:element name="Cena" type="Kolicina" minOccurs="0"/>
+      <xs:element name="Vrednost" type="Znesek" minOccurs="0"/>
+      <xs:element name="SifraSkladiscaV" type="String10" minOccurs="0"/>
+      <xs:element name="Serija" type="String30" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZalogeCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Zaloga" type="ZalogaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZalogaCT">
+    <xs:sequence>
+      <xs:element name="ZalogaGlava" type="ZalogaGlavaCT"/>
+      <xs:element name="ZalogaVrstice" type="ZalogaVrsticeCT"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZalogaVrsticeCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ZalogaVrstica" type="ZalogaVrsticaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZalogaGlavaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Vrsta" type="String1" minOccurs="0"/>
+      <xs:element name="Podvrsta" type="String1" minOccurs="0"/>
+      <xs:element name="Datum" type="Datum" minOccurs="0"/>
+      <xs:element name="Opis" type="String30" minOccurs="0"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="SifraAnalitike" type="String10" minOccurs="0"/>
+      <xs:element name="OdstotekRabata" type="Odstotek" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZalogaVrsticaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraArtikla" type="Sifra30"/>
+      <xs:element name="Kolicina" type="Kolicina" minOccurs="0"/>
+      <xs:element name="Cena" type="Kolicina" minOccurs="0"/>
+      <xs:element name="SifraSkladiscaIz" type="String10" minOccurs="0"/>
+      <xs:element name="SifraSkladiscaV" type="String10" minOccurs="0"/>
+      <xs:element name="ProdajnaCena" type="Kolicina" minOccurs="0"/>
+      <xs:element name="OdstotekPopusta" type="Odstotek" minOccurs="0"/>
+      <xs:element name="Serija" type="String30" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NarocilaCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="Narocilo" type="NarociloCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NarociloCT">
+    <xs:sequence>
+      <xs:element name="NarociloGlava" type="NarociloGlavaCT"/>
+      <xs:element name="NarociloVrstice" type="NarociloVrsticeCT"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NarociloVrsticeCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="NarociloVrstica" type="NarociloVrsticaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NarociloGlavaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="PrejetoIzdano" type="String1Required"/>
+      <xs:element name="Datum" type="Datum" minOccurs="0"/>
+      <xs:element name="SifraStranke" type="String10" minOccurs="0"/>
+      <xs:element name="NazivStranke" type="String100" minOccurs="0"/>
+      <xs:element name="NaslovStranke" type="String50" minOccurs="0"/>
+      <xs:element name="PostnaStevilka" type="String30" minOccurs="0"/>
+      <xs:element name="NazivPoste" type="String250" minOccurs="0"/>
+      <xs:element name="SifraAnalitike" type="String10" minOccurs="0"/>
+      <xs:element name="Rok" type="Datum" minOccurs="0"/>
+      <xs:element name="Veza" type="String30" minOccurs="0"/>
+      <xs:element name="SifraDenarneEnote" type="String3" minOccurs="0"/>
+      <xs:element name="Opomba" type="String1000" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NarociloVrsticaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraArtikla" type="Sifra30"/>
+      <xs:element name="NazivArtikla" type="String250" minOccurs="0"/>
+      <xs:element name="SifraSkladisca" type="Sifra30" minOccurs="0"/>
+      <xs:element name="MerskaEnota" type="String3" minOccurs="0"/>
+      <xs:element name="Opis" type="String8000" minOccurs="0"/>
+      <xs:element name="Kolicina" type="Kolicina" minOccurs="0"/>
+      <xs:element name="OdstotekPopusta" type="Odstotek" minOccurs="0"/>
+      <xs:element name="Cena" type="Kolicina" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmortizacijskaSkupinaCT">
+    <xs:sequence>
+      <xs:element name="Sifra" type="Sifra10"/>
+      <xs:element name="Naziv" type="String50Required"/>
+      <xs:element name="OdstotekAmortizacije" type="Odstotek" minOccurs="0"/>
+      <xs:element name="SifraKontaNabavneVrednosti" type="String30" minOccurs="0"/>
+      <xs:element name="SifraKontaPopravkaVrednosti" type="String30" minOccurs="0"/>
+      <xs:element name="SifraKontaStroskaAmortizacije" type="String30" minOccurs="0"/>
+      <xs:element name="SifraKontaStroskaAmortizacije2" type="String30" minOccurs="0"/>
+      <xs:element name="OdstotekStroskaAmortizacije2" type="Odstotek" minOccurs="0"/>
+      <xs:element name="DavcnaAmortizacijaSkupina" type="String3" minOccurs="0"/>
+      <xs:element name="Opis" type="String2000" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmortizacijskeSkupineCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="AmortizacijskaSkupina" type="AmortizacijskaSkupinaCT" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DopustDelavcaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraDelavca" type="Sifra10"/>
+      <xs:element name="Leto" type="Leto"/>
+      <xs:element name="UrSkupaj" type="Decimal19_2Positive" minOccurs="0"/>
+      <xs:element name="UrZmanjsanje" type="Decimal19_2Positive" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DopustDelavcevCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DopustDelavca" type="DopustDelavcaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RacunStrankeCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraStranke" type="Sifra10"/>
+      <xs:element name="ZacetekIBAN" type="String4" minOccurs="0"/>
+      <xs:element name="TransakcijskiRacun" type="String30Required"/>
+      <xs:element name="BIC" type="String11" minOccurs="0"/>
+      <xs:element name="SePredlaga" type="String1" minOccurs="0"/>
+      <xs:element name="Naziv" type="String250" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RacuniStrankeCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="RacunStranke" type="RacunStrankeCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StikStrankeCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraStranke" type="Sifra10"/>
+      <xs:element name="ImePriimek" type="String30Required"/>
+      <xs:element name="Telefon" type="String30" minOccurs="0"/>
+      <xs:element name="Faks" type="String30" minOccurs="0"/>
+      <xs:element name="MobilniTelefon" type="String30" minOccurs="0"/>
+      <xs:element name="Eposta" type="String50" minOccurs="0"/>
+      <xs:element name="Opomba" type="String50" minOccurs="0"/>
+      <xs:element name="SePredlaga" type="String1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StikiStrankeCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="StikStranke" type="StikStrankeCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OsnovnoSredstvoGlavaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Stevilka" type="Sifra10"/>
+      <xs:element name="Naziv" type="String250Required"/>
+      <xs:element name="Listina" type="String250" minOccurs="0"/>
+      <xs:element name="DatumPridobitve" type="Datum" minOccurs="0"/>
+      <xs:element name="Dobavitelj" type="String250" minOccurs="0"/>
+      <xs:element name="SifraAmortizacijskeSkupine" type="String10" minOccurs="0"/>
+      <xs:element name="OdstotekAmortizacije" type="Odstotek" minOccurs="0"/>
+      <xs:element name="SifraAnalitike" type="String10" minOccurs="0"/>
+      <xs:element name="SifraNahajalisca" type="String10" minOccurs="0"/>
+      <xs:element name="Kolicina" type="xs:int" minOccurs="0"/>
+      <xs:element name="ZacetnaNabavnaVrednost" type="Decimal19_2Positive" minOccurs="0"/>
+      <xs:element name="ZacetniPopravekVrednosti" type="Decimal19_2Positive" minOccurs="0"/>
+      <xs:element name="NeodpisljivaVrednost" type="Decimal19_2Positive" minOccurs="0"/>
+      <xs:element name="ZacetniPopravekVrednostiDavcni" type="Decimal19_2Positive" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OsnovnoSredstvoCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="OsnovnoSredstvoGlava" type="OsnovnoSredstvoGlavaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RSKnjigaPK1VrsticaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Leto" type="Leto"/>
+      <xs:element name="Datum" type="Datum" minOccurs="0"/>
+      <xs:element name="Opis" type="String8000" minOccurs="0"/>
+      <xs:element name="Skupina" type="String1" minOccurs="0"/>
+      <xs:element name="Stolpec4a" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec4b" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec5" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec6a" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec6b" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec7" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec8" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec9" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec10" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec11" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec12" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec13" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec14" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec15" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec16" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec17" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec18" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec19" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec20" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec21a" type="Decimal19_2" minOccurs="0"/>
+      <xs:element name="Stolpec21b" type="Decimal19_2" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RSKnjigaPK1VrsticeCT">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="RSKnjigaPK1Vrstica" type="RSKnjigaPK1VrsticaCT" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BlagovneSkupineCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="BlagovnaSkupina" type="BlagovnaSkupinaCT" nillable="true" id="BlagovnaSkupina" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BlagovnaSkupinaCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="Sifra" type="String30Required"/>
+      <xs:element name="Naziv" type="String250Required"/>
+      <xs:element name="Uporaba" type="String1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NaslovnikiStrankeCT">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="NaslovnikStranke" type="NaslovnikStrankeCT" nillable="true" id="NaslovnikStranke" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NaslovnikStrankeCT">
+    <xs:sequence minOccurs="0">
+      <xs:element name="SifraStranke" type="String30Required"/>
+      <xs:element name="NaslovnikPrejemnik" type="String1" minOccurs="0"/>
+      <xs:element name="Naziv" type="String250"/>
+      <xs:element name="Naslov" type="String250"/>
+      <xs:element name="PostnaStevilka" type="String30"/>
+      <xs:element name="NazivPoste" type="String250"/>
+      <xs:element name="KraticaDrzave" type="String250"/>
+      <xs:element name="NazivDrzave" type="String250" minOccurs="0"/>
+      <xs:element name="SePredlaga" type="String1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

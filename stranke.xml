@@ -1,0 +1,52 @@
+<MinimaxUvozKnjigovodstvo xmlns="http://moj.Minimax.si/ip/doc/schemas/MinimaxUvozKnjigovodstvo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://moj.Minimax.si/ip/doc/schemas/MinimaxUvozKnjigovodstvo http://moj.Minimax.si/ip/doc/schemas/MinimaxUvozKnjigovodstvo.xsd">
+    <Stranke>
+        <Stranka>
+            <Sifra>ab1</Sifra>
+            <Naziv>Testna stranka 1</Naziv>
+            <Naslov>Naslov 1</Naslov>
+            <KraticaDrzave>SI</KraticaDrzave>
+            <PostnaStevilka>1000</PostnaStevilka>
+            <NazivPoste>Ljubljana</NazivPoste>
+            <DavcniZavezanec>D</DavcniZavezanec>
+            <DavcnaStevilka>98026305</DavcnaStevilka>
+            <IdentifikacijskaStevilka>SI98026305</IdentifikacijskaStevilka>
+            <DneviZaZapadlost>18</DneviZaZapadlost>
+            <OdstotekRabata>5</OdstotekRabata>
+            <SpletnaStran>www.testna-stranka.com</SpletnaStran>
+            <Opomba>Opomba v opombi</Opomba>
+        </Stranka>
+        <Stranka>
+            <Sifra>ab2</Sifra>
+            <Naziv>Testna stranka 2</Naziv>
+            <Naslov>Ulica 1</Naslov>
+            <KraticaDrzave>SI</KraticaDrzave>
+            <PostnaStevilka>2000</PostnaStevilka>
+            <NazivPoste>Maribor</NazivPoste>
+            <DavcniZavezanec>M</DavcniZavezanec>
+            <DavcnaStevilka>91132550</DavcnaStevilka>
+            <DneviZaZapadlost>3</DneviZaZapadlost>
+        </Stranka>
+    </Stranke>
+    <RacuniStranke>
+        <RacunStranke>
+            <SifraStranke>ab1</SifraStranke>
+            <ZacetekIBAN>SI56</ZacetekIBAN>
+            <TransakcijskiRacun>1215631</TransakcijskiRacun>
+            <BIC>HKVISI22</BIC>
+            <SePredlaga>D</SePredlaga>
+            <Naziv>Prvi bančni račun</Naziv>
+        </RacunStranke>
+    </RacuniStranke>
+    <StikiStranke>
+        <StikStranke>
+            <SifraStranke>ab2</SifraStranke>
+            <ImePriimek>Ime Priimek</ImePriimek>
+            <Telefon>041 123 654</Telefon>
+            <Faks>05 123 789</Faks>
+            <MobilniTelefon>041 753 159</MobilniTelefon>
+            <Eposta>ime.priimek@testna-stranka2.si</Eposta>
+            <Opomba>Opomba v opombi</Opomba>
+            <SePredlaga>D</SePredlaga>
+        </StikStranke>
+    </StikiStranke>
+</MinimaxUvozKnjigovodstvo>
