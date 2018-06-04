@@ -1,0 +1,17 @@
+<Stranke>
+      <Stranka>
+          <Sifra></Sifra>
+          <Naziv></Naziv>
+          <Naslov></Naslov>
+          <KraticaDrzave></KraticaDrzave>
+          <PostnaStevilka></PostnaStevilka>
+          <NazivPoste></NazivPoste>
+          <DavcniZavezanec></DavcniZavezanec>
+          <DavcnaStevilka></DavcnaStevilka>
+          <IdentifikacijskaStevilka></IdentifikacijskaStevilka>
+          <DneviZaZapadlost></DneviZaZapadlost>
+          <OdstotekRabata></OdstotekRabata>
+          <SpletnaStran></SpletnaStran>
+          <Opomba></Opomba>
+      </Stranka>
+  </Stranke>
