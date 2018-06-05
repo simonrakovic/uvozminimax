@@ -51,7 +51,10 @@ class IzdanRacun{
 
   addDDVTemeljnice(DDVGlava, DDVStopnja){
     this.xmlobjmap.Temeljnica.DDV[0].DDVVrstica[0].DDVGlava.push(DDVGlava)
-    this.xmlobjmap.Temeljnica.DDV[0].DDVVrstica[0].DDVStopnje[0].DDVStopnja.push(DDVStopnja)
+    DDVStopnja.forEach((obj)=>{
+      this.xmlobjmap.Temeljnica.DDV[0].DDVVrstica[0].DDVStopnje[0].DDVStopnja.push(obj)
+    })
+
   }
 
   addVrsticaTemeljnice(data){
@@ -134,3 +137,6 @@ xmlobj.createObjectsFromMap((err)=>{
   StoritevDDV: [ '2.00' ] }
 
  */
+
+
+module.exports = IzdanRacun
