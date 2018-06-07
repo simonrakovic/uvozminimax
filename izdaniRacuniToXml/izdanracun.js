@@ -7,66 +7,85 @@ const builder = new xml2js.Builder({headless: true});
 
 class IzdanRacun{
   constructor(){
-    this.mapping = "/../mappings/izdanracun.xml"
-    this.xmlobjmap = null
+    this.xmlObj = {
+      Temeljnica:{
+        GlavaTemeljnice:[],
+        VrsticeTemeljnice:[]
+      }
+    }
+  }
 
+  addGlavaTemeljnice(datum, opis){
+    this.xmlObj.Temeljnica.GlavaTemeljnice.push({
+                          SifraVrsteTemeljnice: 'IR' ,
+                          DatumTemeljnice: datum ,
+                          OpisGlaveTemeljnice: opis
+                        })
+  }
 
+  addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
 
-    this.vrsticaTemeljnice = {}
-    this.GlavaTemeljnice = {}
-    this.DDVVrstica = {}
-    this.DDVGlava = {}
-    this.DDVStopnja  = {}
+    if(Number(stranka) !== 0 && Number(dobro) !== 0){
+      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+        DatumKnjizbe: datum,
+        OpisVrsticeTemeljnice: opis ,
+        SifraKonta: konto,
+        SifraStranke: stranka ,
+        DatumZapadlosti: datum_zapadlosti ,
+        DatumOpravljanja: datum,
+        VezaZaPlacilo: veza,
+        ZnesekVDobroVDenarniEnoti: dobro,
+        ZnesekVDobroVDomaciDenarniEnoti: dobro,
+        StevilkaKnjizbe: id_knjizbe
+      })
 
+    }else if(Number(stranka) !== 0 && Number(breme) !== 0){
+      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+        DatumKnjizbe: datum,
+        OpisVrsticeTemeljnice: opis ,
+        SifraKonta: konto,
+        SifraStranke: stranka ,
+        DatumZapadlosti: datum_zapadlosti ,
+        DatumOpravljanja: datum,
+        VezaZaPlacilo: veza,
+        ZnesekVBremeVDenarniEnoti: breme,
+        ZnesekVBremeVDomaciDenarniEnoti: breme,
+        StevilkaKnjizbe: id_knjizbe
+      })
+
+    }else if(Number(stranka) === 0 && Number(dobro) !== 0){
+      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+        DatumKnjizbe: datum,
+        OpisVrsticeTemeljnice: opis ,
+        SifraKonta: konto,
+        ZnesekVDobroVDenarniEnoti: dobro,
+        ZnesekVDobroVDomaciDenarniEnoti: dobro,
+      })
+    }else if(Number(stranka) === 0 && Number(breme) !== 0 ){
+
+      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+        DatumKnjizbe: datum,
+        OpisVrsticeTemeljnice: opis ,
+        SifraKonta: konto,
+        ZnesekVBremeVDenarniEnoti: breme,
+        ZnesekVBremeVDomaciDenarniEnoti: breme,
+      })
+    }else{
+      console.log("UPS!! prislo je do izjeme "+opis)
+      console.log(stranka+"|"+breme+"|"+dobro)
+      console.log("________________________________")
+
+    }
 
   }
 
-  createObjectsFromMap(cb){
-    fs.readFile(__dirname + this.mapping, (err, data)=> {
-        parser.parseString(data, (err, result)=> {
-            this.vrsticaTemeljnice = result.Temeljnica.VrsticeTemeljnice[0].VrsticaTemeljnice[0]
-            result.Temeljnica.VrsticeTemeljnice[0].VrsticaTemeljnice = []
-
-            this.GlavaTemeljnice = result.Temeljnica.GlavaTemeljnice[0]
-            result.Temeljnica.GlavaTemeljnice = []
-
-
-            this.DDVGlava = result.Temeljnica.DDV[0].DDVVrstica[0].DDVGlava[0]
-            result.Temeljnica.DDV[0].DDVVrstica[0].DDVGlava = []
-
-            this.DDVStopnja  = result.Temeljnica.DDV[0].DDVVrstica[0].DDVStopnje[0].DDVStopnja[0]
-            result.Temeljnica.DDV[0].DDVVrstica[0].DDVStopnje[0].DDVStopnja = []
-
-            this.xmlobjmap = result
-
-
-            //this.vrsticaTemeljniceMap = result
-
-            cb(err)
-        });
-    });
-  }
-
-  addGlavaTemeljnice(data){
-    this.xmlobjmap.Temeljnica.GlavaTemeljnice.push(data)
-  }
-
-  addDDVTemeljnice(DDVGlava, DDVStopnja){
-    this.xmlobjmap.Temeljnica.DDV[0].DDVVrstica[0].DDVGlava.push(DDVGlava)
-
-    DDVStopnja.forEach((obj)=>{
-      if(obj)this.xmlobjmap.Temeljnica.DDV[0].DDVVrstica[0].DDVStopnje[0].DDVStopnja.push(obj)
-    })
-
-  }
-
-  addVrsticaTemeljnice(data){
-    this.xmlobjmap.Temeljnica.VrsticeTemeljnice[0].VrsticaTemeljnice.push(data)
+  addData(obj){
+    obj.
   }
 
   toString(){
-    if(this.xmlobjmap.Temeljnica.DDV[0].DDVVrstica[0].DDVGlava) delete this.xmlobjmap.Temeljnica.DDV
-    return builder.buildObject(this.xmlobjmap);
+
+    return builder.buildObject(this.xmlObj);
   }
 }
 

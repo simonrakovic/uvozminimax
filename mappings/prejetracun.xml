@@ -1,33 +1,9 @@
-
-
 <Temeljnica>
     <GlavaTemeljnice>
         <SifraVrsteTemeljnice>PR</SifraVrsteTemeljnice>
         <DatumTemeljnice>2013-02-02</DatumTemeljnice>
         <OpisGlaveTemeljnice>PR:2013-12</OpisGlaveTemeljnice>
     </GlavaTemeljnice>
-    <DDV>
-        <DDVVrstica>
-            <DDVGlava>
-                <DatumDDV>2013-02-02</DatumDDV>
-                <KnjigaDDV>PR</KnjigaDDV>
-                <DatumKnjizenjaDDV>2013-02-02</DatumKnjizenjaDDV>
-                <SifraStranke>123</SifraStranke>
-                <Listina>PR:2013-12</Listina>
-                <DatumListine>2013-02-01</DatumListine>
-                <DatumPrejema>2013-02-01</DatumPrejema>
-            </DDVGlava>
-            <DDVStopnje>
-                <DDVStopnja>
-                    <SifraStopnjeDDV>S</SifraStopnjeDDV>
-                    <Osnova>100.00</Osnova>
-                    <DDV>20.00</DDV>
-                    <StoritevOsnova>200.00</StoritevOsnova>
-                    <StoritevDDV>40.00</StoritevDDV>
-                </DDVStopnja>
-            </DDVStopnje>
-        </DDVVrstica>
-    </DDV>
     <VrsticeTemeljnice>
         <VrsticaTemeljnice>
             <DatumKnjizbe>2013-02-02</DatumKnjizbe>

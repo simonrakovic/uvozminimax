@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<miniMAXUvozKnjigovodstvo xmlns="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo.xsd">
+    <Stranke>
+
+      <Stranka>
+        <Sifra>57577382</Sifra>
+        <Naziv>KUEHNE + NAGEL d.o.o.</Naziv>
+        <Naslov>ZGORNJI BRNIK 130 F</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4210</PostnaStevilka>
+        <NazivPoste>BRNIK - AERODROM</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>57577382</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI57577382</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>81922540</Sifra>
+        <Naziv>RENATA JERMAN s.p.</Naziv>
+        <Naslov>ŠOLSKA ULICA 18</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8340</PostnaStevilka>
+        <NazivPoste>ČRNOMELJ</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>81922540</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI81922540</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>58428399</Sifra>
+        <Naziv>PEDALIN D.O.O.</Naziv>
+        <Naslov>LIMINJANSKA CESTA 96</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>6320</PostnaStevilka>
+        <NazivPoste>PORTOROŽ - PORTOROSE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>58428399</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI58428399</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>21143552</Sifra>
+        <Naziv>ANDREJA JEROMEN D.O.O.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>21143552</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI21143552</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>62399101</Sifra>
+        <Naziv>DOM UPOKOJENCEV POSTOJNA</Naziv>
+        <Naslov>ROŽNA ULICA 10</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>6230</PostnaStevilka>
+        <NazivPoste>POSTOJNA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>62399101</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI62399101</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>55477232</Sifra>
+        <Naziv>SREDNJA GOZDARSKA IN LESARSKA ŠOLA</Naziv>
+        <Naslov>TRŽAŠKA CESTA 36</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>6230</PostnaStevilka>
+        <NazivPoste>POSTOJNA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>55477232</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI55477232</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>39421031</Sifra>
+        <Naziv>KAPLJA - HIT D.O.O.</Naziv>
+        <Naslov>GORENJA BREZOVICA 54</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8310</PostnaStevilka>
+        <NazivPoste>ŠENTJERNEJ</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>39421031</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI39421031</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>38613522</Sifra>
+        <Naziv>MEDIA D.O.O.</Naziv>
+        <Naslov>GORIČICA PRI IHANU 12 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1230</PostnaStevilka>
+        <NazivPoste>DOMŽALE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>38613522</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI38613522</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>74608444</Sifra>
+        <Naziv>MARKET DUŠAK D.O.O.</Naziv>
+        <Naslov>CERKLJE OB KRKI 10</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8263</PostnaStevilka>
+        <NazivPoste>CERKLJE OB KRKI</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>74608444</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI74608444</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>66566339</Sifra>
+        <Naziv>KZ LENART Z.O.O.</Naziv>
+        <Naslov>INDUSTRIJSKA ULICA 24</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2230</PostnaStevilka>
+        <NazivPoste>LENART V SLOV. GORICAH</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>66566339</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI66566339</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>56699484</Sifra>
+        <Naziv>DIJEGO KRIŽMAN S.P.</Naziv>
+        <Naslov>PRVOMAJSKI TRG 11</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>6330</PostnaStevilka>
+        <NazivPoste>PIRAN - PIRANO</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>56699484</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI56699484</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>59100761</Sifra>
+        <Naziv>JANEZ VOZELJ S.P.</Naziv>
+        <Naslov>VELIKA PIREŠICA 5 J</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3310</PostnaStevilka>
+        <NazivPoste>ŽALEC</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>59100761</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI59100761</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>75293803</Sifra>
+        <Naziv>GORAZD PRAPROTNIK S.P.</Naziv>
+        <Naslov>BREZJE 63 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4243</PostnaStevilka>
+        <NazivPoste>BREZJE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>75293803</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI75293803</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>60858010</Sifra>
+        <Naziv>DAMIJANA VEHAR S.P.</Naziv>
+        <Naslov>KOLODVORSKA CESTA 40</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>6257</PostnaStevilka>
+        <NazivPoste>PIVKA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>60858010</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI60858010</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>44270852</Sifra>
+        <Naziv>MIRANA BERGINC S.P.</Naziv>
+        <Naslov>ŽAGA 50</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>5224</PostnaStevilka>
+        <NazivPoste>SRPENICA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>44270852</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI44270852</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>14349229</Sifra>
+        <Naziv>NAPONTA KFT.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>14349229</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI14349229</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>55839231</Sifra>
+        <Naziv>TORADA D.O.O.</Naziv>
+        <Naslov>BOROVEC 18</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1236</PostnaStevilka>
+        <NazivPoste>TRZIN</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>55839231</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI55839231</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>13399578</Sifra>
+        <Naziv>KZ PTUJ Z.O.O.</Naziv>
+        <Naslov>MIKLOŠIČEVA ULICA 12</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2250</PostnaStevilka>
+        <NazivPoste>PTUJ</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>13399578</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI13399578</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>95489428</Sifra>
+        <Naziv>GRADBENA MEHANIZACIJA, PREVOZI</Naziv>
+        <Naslov>OREŠJE NA BIZELJSKEM 61</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8259</PostnaStevilka>
+        <NazivPoste>BIZELJSKO</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>95489428</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI95489428</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>83788298</Sifra>
+        <Naziv>PERKO D.O.O.</Naziv>
+        <Naslov>ŠENTPETER 14</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8222</PostnaStevilka>
+        <NazivPoste>OTOČEC</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>83788298</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI83788298</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>96704829</Sifra>
+        <Naziv>KRANJSKE MESNINE D.O.O.</Naziv>
+        <Naslov>DVORJE 112</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4207</PostnaStevilka>
+        <NazivPoste>CERKLJE NA GORENJSKEM</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>96704829</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI96704829</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>10515216</Sifra>
+        <Naziv>HELENA ERJAVEC S.P.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>10515216</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI10515216</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>20425112</Sifra>
+        <Naziv>TRGOVINA NA DROBNO LJUDMILA KREFT S.P.</Naziv>
+        <Naslov>SOVJAK 28</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9244</PostnaStevilka>
+        <NazivPoste>SVETI JURIJ OB ŠČAVNICI</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>20425112</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI20425112</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>35183900</Sifra>
+        <Naziv>MIRKA PETROVIČ S.P.</Naziv>
+        <Naslov>STARA GORA 12 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9244</PostnaStevilka>
+        <NazivPoste>SVETI JURIJ OB ŠČAVNICI</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>35183900</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI35183900</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>35652209</Sifra>
+        <Naziv>KZ ŠALEŠKA DOLINA, Z.O.O.</Naziv>
+        <Naslov>METLEČE 7</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3325</PostnaStevilka>
+        <NazivPoste>ŠOŠTANJ</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>35652209</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI35652209</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>25393740</Sifra>
+        <Naziv>PANATOP, D.O.O.</Naziv>
+        <Naslov>ŠMARTNO OB DRETI 70</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3341</PostnaStevilka>
+        <NazivPoste>ŠMARTNO OB DRETI</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>25393740</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI25393740</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>28400704</Sifra>
+        <Naziv>MILAN TRAMTE S.P.</Naziv>
+        <Naslov>DOLENJE KAMENCE 12</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8000</PostnaStevilka>
+        <NazivPoste>NOVO MESTO</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>28400704</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI28400704</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>75972719</Sifra>
+        <Naziv>PETER TURK S.P.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>75972719</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI75972719</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>42813166</Sifra>
+        <Naziv>NEVENKA REZAR S.P.</Naziv>
+        <Naslov>CVETLIČNA ULICA 1</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3215</PostnaStevilka>
+        <NazivPoste>LOČE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>42813166</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI42813166</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>36812609</Sifra>
+        <Naziv>HELENA EJLEC, S.P.</Naziv>
+        <Naslov>PARTIZANSKA CESTA 28</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9250</PostnaStevilka>
+        <NazivPoste>GORNJA RADGONA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>36812609</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI36812609</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>89735242</Sifra>
+        <Naziv>MIROSLAV KURBUS S.P.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>89735242</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI89735242</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>56723253</Sifra>
+        <Naziv>KERIN JANKO S.P.</Naziv>
+        <Naslov>CESTA KRŠKIH ŽRTEV 65 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8270</PostnaStevilka>
+        <NazivPoste>KRŠKO</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>56723253</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI56723253</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>17618444</Sifra>
+        <Naziv>MAPE D.O.O.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>17618444</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI17618444</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>36179817</Sifra>
+        <Naziv>KATJA JOST, S.P.</Naziv>
+        <Naslov>TRUBARJEVA ULICA 11</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3240</PostnaStevilka>
+        <NazivPoste>ŠMARJE PRI JELŠAH</NazivPoste>
+        <DavcniZavezanec>N</DavcniZavezanec>
+        <DavcnaStevilka>36179817</DavcnaStevilka>
+        <IdentifikacijskaStevilka>36179817</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>75449854</Sifra>
+        <Naziv>FEHR D.O.O.</Naziv>
+        <Naslov>NEGOVA 17</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9245</PostnaStevilka>
+        <NazivPoste>SPODNJI IVANJCI</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>75449854</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI75449854</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>47716045</Sifra>
+        <Naziv>MARIN NORD GROSUPLJE D.O.O.</Naziv>
+        <Naslov>JAKHLOVA CESTA 8</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1290</PostnaStevilka>
+        <NazivPoste>GROSUPLJE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>47716045</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI47716045</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>71230408</Sifra>
+        <Naziv>BBI D.O.O.</Naziv>
+        <Naslov>LUČE 83</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3334</PostnaStevilka>
+        <NazivPoste>LUČE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>71230408</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI71230408</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>95328483</Sifra>
+        <Naziv>VEJAJO D.O.O.</Naziv>
+        <Naslov>ŠALEK 7</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3320</PostnaStevilka>
+        <NazivPoste>VELENJE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>95328483</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI95328483</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>32362510</Sifra>
+        <Naziv>MARKET POHORSKA, KLAVDIJA LEVOVNIK, S.P.</Naziv>
+        <Naslov>POHORSKA ULICA 13 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3000</PostnaStevilka>
+        <NazivPoste>CELJE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>32362510</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI32362510</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>64196992</Sifra>
+        <Naziv>OGRINEC MARTINA S.P.</Naziv>
+        <Naslov>KARLOVICA 8</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1315</PostnaStevilka>
+        <NazivPoste>VELIKE LAŠČE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>64196992</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI64196992</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>27553647</Sifra>
+        <Naziv>DARIJA VREŽE S.P.</Naziv>
+        <Naslov>CANKARJEVA ULICA 11</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3240</PostnaStevilka>
+        <NazivPoste>ŠMARJE PRI JELŠAH</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>27553647</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI27553647</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>58357955</Sifra>
+        <Naziv>ČADEŽ D.O.O.</Naziv>
+        <Naslov>VISOKO 7 G</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4212</PostnaStevilka>
+        <NazivPoste>VISOKO</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>58357955</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI58357955</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>79187749</Sifra>
+        <Naziv>SIMONIČ EVGEN - NOSILEC DOPOLNILNE</Naziv>
+        <Naslov>ZGORNJA ŠČAVNICA 17</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2233</PostnaStevilka>
+        <NazivPoste>SV. ANA V SLOV. GORICAH</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>79187749</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI79187749</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>37867504</Sifra>
+        <Naziv>MAŠA D.O.O.</Naziv>
+        <Naslov>KRKA 35</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1301</PostnaStevilka>
+        <NazivPoste>KRKA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>37867504</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI37867504</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>95210237</Sifra>
+        <Naziv>MONIKA VOGRIN S.P.</Naziv>
+        <Naslov>PARTIZANSKA CESTA 31</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2230</PostnaStevilka>
+        <NazivPoste>LENART V SLOV. GORICAH</NazivPoste>
+        <DavcniZavezanec>N</DavcniZavezanec>
+        <DavcnaStevilka>95210237</DavcnaStevilka>
+        <IdentifikacijskaStevilka>95210237</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>64229327</Sifra>
+        <Naziv>PIRGOS, D.O.O.</Naziv>
+        <Naslov>POLJANSKA CESTA 20</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>64229327</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI64229327</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>53457528</Sifra>
+        <Naziv>M - OREL D.O.O.</Naziv>
+        <Naslov>STARA CESTA 50</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1360</PostnaStevilka>
+        <NazivPoste>VRHNIKA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>53457528</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI53457528</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>62887513</Sifra>
+        <Naziv>OCR KOSMAČ &amp; CO. K.D.</Naziv>
+        <Naslov>DRAVELJSKA ULICA 18</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>62887513</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI62887513</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>74077171</Sifra>
+        <Naziv>PFEIFER D.O.O.</Naziv>
+        <Naslov>PRIHOVA 21</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3331</PostnaStevilka>
+        <NazivPoste>NAZARJE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>74077171</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI74077171</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>11992468</Sifra>
+        <Naziv>DAMAHAUS PRESTIGE D.O.O.</Naziv>
+        <Naslov>SPODNJI BRNIK 2</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4207</PostnaStevilka>
+        <NazivPoste>CERKLJE NA GORENJSKEM</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>11992468</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI11992468</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>15684903</Sifra>
+        <Naziv>BOSEPO D.O.O.</Naziv>
+        <Naslov>LISEC 199</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>8211</PostnaStevilka>
+        <NazivPoste>DOBRNIČ</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>15684903</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI15684903</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>72690836</Sifra>
+        <Naziv>POSTOJNSKE MESNINE D.O.O.</Naziv>
+        <Naslov>POT K PIVKI 2</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>6230</PostnaStevilka>
+        <NazivPoste>POSTOJNA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>72690836</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI72690836</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>40239802</Sifra>
+        <Naziv>LOGES, D.O.O.</Naziv>
+        <Naslov>CELOVŠKA CESTA 492</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1210</PostnaStevilka>
+        <NazivPoste>LJUBLJANA - ŠENTVID</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>40239802</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI40239802</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>54183103</Sifra>
+        <Naziv>VEGA PRODUKT MURSKI PETROVCI D.O.O.</Naziv>
+        <Naslov>MURSKI PETROVCI 13</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9251</PostnaStevilka>
+        <NazivPoste>TIŠINA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>54183103</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI54183103</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>49001817</Sifra>
+        <Naziv>VITALIFE VJT D.O.O.</Naziv>
+        <Naslov>PUŠTAL 35</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4220</PostnaStevilka>
+        <NazivPoste>ŠKOFJA LOKA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>49001817</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI49001817</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>14154447</Sifra>
+        <Naziv>JELER FRANC S.P.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>14154447</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI14154447</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>12463671</Sifra>
+        <Naziv>PITUS D.O.O.</Naziv>
+        <Naslov>OB DRAVI 2 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2000</PostnaStevilka>
+        <NazivPoste>MARIBOR</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>12463671</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI12463671</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>53870646</Sifra>
+        <Naziv>PEKARNA HROVAT, D.O.O.</Naziv>
+        <Naslov>KRANJSKA POT 3</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1218</PostnaStevilka>
+        <NazivPoste>KOMENDA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>53870646</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI53870646</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>44953534</Sifra>
+        <Naziv>AN-JAN D.O.O.</Naziv>
+        <Naslov>PETKOVEC 5</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1373</PostnaStevilka>
+        <NazivPoste>ROVTE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>44953534</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI44953534</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>90575121</Sifra>
+        <Naziv>NEKTAR NATURA D.O.O.</Naziv>
+        <Naslov>EKSLERJEVA ULICA 8</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1241</PostnaStevilka>
+        <NazivPoste>KAMNIK</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>90575121</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI90575121</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>88256375</Sifra>
+        <Naziv>SOTRA PLUS,d.o.o.,so.p.</Naziv>
+        <Naslov>CESTA XIV. DIVIZIJE 8</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2000</PostnaStevilka>
+        <NazivPoste>MARIBOR</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>88256375</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI88256375</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>75844818</Sifra>
+        <Naziv>OSNOVNA ŠOLA FRANCETA BEVKA</Naziv>
+        <Naslov>ULICA POHORSKEGA BATALJONA 1</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>75844818</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI75844818</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>31993346</Sifra>
+        <Naziv>KRISTINA DRESLER S.P.</Naziv>
+        <Naslov>PODGORJE 32</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9253</PostnaStevilka>
+        <NazivPoste>APAČE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>31993346</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI31993346</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>45943524</Sifra>
+        <Naziv>KZ RADGONA, Z.O.O.</Naziv>
+        <Naslov>PARTIZANSKA CESTA 23</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9250</PostnaStevilka>
+        <NazivPoste>GORNJA RADGONA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>45943524</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI45943524</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>47699850</Sifra>
+        <Naziv>KROGOS TRGOVINA IN STORITVE D.</Naziv>
+        <Naslov>SOKOLSKA ULICA 19</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2000</PostnaStevilka>
+        <NazivPoste>MARIBOR</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>47699850</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI47699850</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>78080649</Sifra>
+        <Naziv>SMART FUTURISTIC D.O.O.</Naziv>
+        <Naslov>LINHARTOVA CESTA 13</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>78080649</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI78080649</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>62235168</Sifra>
+        <Naziv>KADA D.O.O</Naziv>
+        <Naslov>PETROVČE 243</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3301</PostnaStevilka>
+        <NazivPoste>PETROVČE</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>62235168</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI62235168</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>85543004</Sifra>
+        <Naziv>ZAVOD SV. RAFAELA VRANSKO</Naziv>
+        <Naslov>VRANSKO 144 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>3305</PostnaStevilka>
+        <NazivPoste>VRANSKO</NazivPoste>
+        <DavcniZavezanec>N</DavcniZavezanec>
+        <DavcnaStevilka>85543004</DavcnaStevilka>
+        <IdentifikacijskaStevilka>85543004</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>46822704</Sifra>
+        <Naziv>DIB d.o.o. Trbovlje</Naziv>
+        <Naslov>DOBOVEC 24 B</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1423</PostnaStevilka>
+        <NazivPoste>DOBOVEC</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>46822704</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI46822704</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>41598547</Sifra>
+        <Naziv>EVGAS,JOŽE AUBERŠEK S.P.</Naziv>
+        <Naslov>RDEČI BREG - DEL 78</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2363</PostnaStevilka>
+        <NazivPoste>PODVELKA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>41598547</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI41598547</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>97389226</Sifra>
+        <Naziv>JANEZ BOBOVNIK S.P.</Naziv>
+        <Naslov>POHORSKA CESTA 9</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2360</PostnaStevilka>
+        <NazivPoste>RADLJE OB DRAVI</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>97389226</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI97389226</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>47431296</Sifra>
+        <Naziv>DADIMONT D.O.O.</Naziv>
+        <Naslov>NOVINE 30</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>2212</PostnaStevilka>
+        <NazivPoste>ŠENTILJ V SLOV. GORICAH</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>47431296</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI47431296</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>36431052</Sifra>
+        <Naziv>AROMA KASTRIOT SADIKAJ S.P.</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>36431052</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI36431052</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>53397274</Sifra>
+        <Naziv>SIND TRGOVINA D.O.O.</Naziv>
+        <Naslov>ZGORNJE JEZERSKO 56 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4206</PostnaStevilka>
+        <NazivPoste>ZGORNJE JEZERSKO</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>53397274</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI53397274</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>69920036</Sifra>
+        <Naziv>MARIJA PONGRAC S.P.-TRGOVINA S</Naziv>
+        <Naslov/>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka/>
+        <NazivPoste/>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>69920036</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI69920036</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>47546913</Sifra>
+        <Naziv>OLJKA PLUS D.O.O.</Naziv>
+        <Naslov>LITOSTROJSKA CESTA 8</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>N</DavcniZavezanec>
+        <DavcnaStevilka>47546913</DavcnaStevilka>
+        <IdentifikacijskaStevilka>47546913</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>72988029</Sifra>
+        <Naziv>PIKNIK GRILC, DAMIJAN GRILC S.P.</Naziv>
+        <Naslov>GORENJSKA ULICA 19 A</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>4260</PostnaStevilka>
+        <NazivPoste>BLED</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>72988029</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI72988029</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>44198957</Sifra>
+        <Naziv>TRGOVINA GAJA VEREŠ MARTINA S.P.</Naziv>
+        <Naslov>ULICA OB MURI 38</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>9000</PostnaStevilka>
+        <NazivPoste>MURSKA SOBOTA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>44198957</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI44198957</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>56012624</Sifra>
+        <Naziv>AMONTE D.O.O.</Naziv>
+        <Naslov>DEVOVA ULICA 18</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>56012624</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI56012624</IdentifikacijskaStevilka>
+      </Stranka>
+      <Stranka>
+        <Sifra>81241038</Sifra>
+        <Naziv>MIMOVRSTE D.O.O.</Naziv>
+        <Naslov>CESTA LJUBLJANSKE BRIGADE 21</Naslov>
+        <KraticaDrzave>SI</KraticaDrzave>
+        <PostnaStevilka>1000</PostnaStevilka>
+        <NazivPoste>LJUBLJANA</NazivPoste>
+        <DavcniZavezanec>D</DavcniZavezanec>
+        <DavcnaStevilka>81241038</DavcnaStevilka>
+        <IdentifikacijskaStevilka>SI81241038</IdentifikacijskaStevilka>
+      </Stranka>
+
+    </Stranke>
+</miniMAXUvozKnjigovodstvo>

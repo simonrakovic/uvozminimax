@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<miniMAXUvozKnjigovodstvo xmlns="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo.xsd">
+    <Temeljnice>
+      <Temeljnica>
+        <GlavaTemeljnice>
+          <SifraVrsteTemeljnice>IR</SifraVrsteTemeljnice>
+          <DatumTemeljnice>2018-01-01</DatumTemeljnice>
+          <OpisGlaveTemeljnice>IR:2018-01-01</OpisGlaveTemeljnice>
+        </GlavaTemeljnice>
+        <VrsticeTemeljnice>
+          <VrsticaTemeljnice>
+            <DatumKnjizbe>2018-01-01</DatumKnjizbe>
+            <OpisVrsticeTemeljnice>IR: 4118000866</OpisVrsticeTemeljnice>
+            <SifraKonta>1200</SifraKonta>
+            <SifraStranke>87927497</SifraStranke>
+            <DatumZapadlosti>2018-03-22</DatumZapadlosti>
+            <DatumOpravljanja>2018-01-01</DatumOpravljanja>
+            <VezaZaPlacilo>411</VezaZaPlacilo>
+            <ZnesekVBremeVDenarniEnoti>49.13</ZnesekVBremeVDenarniEnoti>
+            <ZnesekVBremeVDomaciDenarniEnoti>49.13</ZnesekVBremeVDomaciDenarniEnoti>
+            <StevilkaKnjizbe>4615000197</StevilkaKnjizbe>
+          </VrsticaTemeljnice>
+          <VrsticaTemeljnice>
+            <DatumKnjizbe>2018-01-01</DatumKnjizbe>
+            <OpisVrsticeTemeljnice>IR: 4118000866</OpisVrsticeTemeljnice>
+            <SifraKonta>26001</SifraKonta>
+            <ZnesekVDobroVDenarniEnoti>4.26</ZnesekVDobroVDenarniEnoti>
+            <ZnesekVDobroVDomaciDenarniEnoti>4.26</ZnesekVDobroVDomaciDenarniEnoti>
+          </VrsticaTemeljnice>
+          <VrsticaTemeljnice>
+            <DatumKnjizbe>2018-01-01</DatumKnjizbe>
+            <OpisVrsticeTemeljnice>IR: 4118000866</OpisVrsticeTemeljnice>
+            <SifraKonta>76200</SifraKonta>
+            <ZnesekVDobroVDenarniEnoti>44.87</ZnesekVDobroVDenarniEnoti>
+            <ZnesekVDobroVDomaciDenarniEnoti>44.87</ZnesekVDobroVDomaciDenarniEnoti>
+          </VrsticaTemeljnice>
+        </VrsticeTemeljnice>
+      </Temeljnica>
+      <Temeljnica>
+        <GlavaTemeljnice>
+          <SifraVrsteTemeljnice>BD</SifraVrsteTemeljnice>
+          <DatumTemeljnice>2018-01-01</DatumTemeljnice>
+          <OpisGlaveTemeljnice>IR:2018-01-01</OpisGlaveTemeljnice>
+        </GlavaTemeljnice>
+        <VrsticeTemeljnice>
+          <VrsticaTemeljnice>
+            <DatumKnjizbe>2018-01-01</DatumKnjizbe>
+            <OpisVrsticeTemeljnice>IR: 4118000866</OpisVrsticeTemeljnice>
+            <SifraKonta>1200</SifraKonta>
+            <SifraStranke>87927497</SifraStranke>
+            <DatumZapadlosti>2018-03-22</DatumZapadlosti>
+            <DatumOpravljanja>2018-01-01</DatumOpravljanja>
+            <VezaZaPlacilo>411</VezaZaPlacilo>
+            <ZnesekVDobroVDenarniEnoti>49.13</ZnesekVDobroVDenarniEnoti>
+            <ZnesekVDobroVDomaciDenarniEnoti>49.13</ZnesekVDobroVDomaciDenarniEnoti>
+            <StevilkaKnjizbe>412</StevilkaKnjizbe>
+          </VrsticaTemeljnice>
+          <VrsticaTemeljnice>
+            <DatumKnjizbe>2018-01-01</DatumKnjizbe>
+            <OpisVrsticeTemeljnice>IR: 4118000866</OpisVrsticeTemeljnice>
+            <SifraKonta>11000</SifraKonta>
+            <ZnesekVBremeVDenarniEnoti>49.13</ZnesekVBremeVDenarniEnoti>
+            <ZnesekVBremeVDomaciDenarniEnoti>49.13</ZnesekVBremeVDomaciDenarniEnoti>
+
+          </VrsticaTemeljnice>
+        </VrsticeTemeljnice>
+      </Temeljnica>
+    </Temeljnice>
+    <Zapiranja>
+      <Zapiranje>
+        <StevilkaZapiraneKnjizbe>412</StevilkaZapiraneKnjizbe>
+        <StevilkaZapirajoceKnjizbe>411</StevilkaZapirajoceKnjizbe>
+        <Znesek>49.13 </Znesek>
+        <ZnesekVDomaciDenarniEnoti>49.13</ZnesekVDomaciDenarniEnoti>
+      </Zapiranje>
+    </Zapiranja>
+</miniMAXUvozKnjigovodstvo>
