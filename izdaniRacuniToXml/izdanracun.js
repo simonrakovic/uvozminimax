@@ -79,9 +79,6 @@ class IzdanRacun{
 
   }
 
-  addData(obj){
-    obj.
-  }
 
   toString(){
 
