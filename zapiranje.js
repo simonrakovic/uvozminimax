@@ -1,17 +1,15 @@
+const xml2js = require('xml2js');
+const builder = new xml2js.Builder({headless: true});
 
-class Zapiranje(){
-  constructor(){
+
+class Zapiranje{
+  constructor(StevilkaZapiraneKnjizbe, StevilkaZapirajoceKnjizbe, ZnesekVDomaciDenarniEnoti){
     this.xmlObj = {
-      Zapiranje:[]
-    }
-  }
-
-  addZapiranje(StevilkaZapiraneKnjizbe, StevilkaZapirajoceKnjizbe, ZnesekVDomaciDenarniEnoti){
-    xmlObj.Zapiranje.push({
-      StevilkaZapiraneKnjizbe: StevilkaZapiraneKnjizbe,
-      StevilkaZapirajoceKnjizbe: StevilkaZapirajoceKnjizbe,
-      ZnesekVDomaciDenarniEnoti: ZnesekVDomaciDenarniEnoti
-    })
+          StevilkaZapiraneKnjizbe: StevilkaZapiraneKnjizbe,
+          StevilkaZapirajoceKnjizbe: StevilkaZapirajoceKnjizbe,
+          ZnesekVDomaciDenarniEnoti: ZnesekVDomaciDenarniEnoti
+        }
+    
   }
 
 

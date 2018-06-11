@@ -8,15 +8,14 @@ const builder = new xml2js.Builder({headless: true});
 class IzdanRacun{
   constructor(){
     this.xmlObj = {
-      Temeljnica:{
         GlavaTemeljnice:[],
         VrsticeTemeljnice:[]
       }
-    }
+
   }
 
   addGlavaTemeljnice(datum, opis){
-    this.xmlObj.Temeljnica.GlavaTemeljnice.push({
+    this.xmlObj.GlavaTemeljnice.push({
                           SifraVrsteTemeljnice: 'IR' ,
                           DatumTemeljnice: datum ,
                           OpisGlaveTemeljnice: opis
@@ -26,7 +25,7 @@ class IzdanRacun{
   addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
 
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -40,7 +39,7 @@ class IzdanRacun{
       })
 
     }else if(Number(stranka) !== 0 && Number(breme) !== 0){
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -54,7 +53,7 @@ class IzdanRacun{
       })
 
     }else if(Number(stranka) === 0 && Number(dobro) !== 0){
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -63,7 +62,7 @@ class IzdanRacun{
       })
     }else if(Number(stranka) === 0 && Number(breme) !== 0 ){
 
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,

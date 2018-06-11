@@ -8,10 +8,10 @@ const builder = new xml2js.Builder({headless: true});
 class BancniIzpisek{
   constructor(){
     this.xmlObj = {
-      Temeljnica:{
+
         GlavaTemeljnice:[],
         VrsticeTemeljnice:[]
-      }
+
     }
 
   }
@@ -19,7 +19,7 @@ class BancniIzpisek{
 
 
   addGlavaTemeljnice(datum, opis){
-    this.xmlObj.Temeljnica.GlavaTemeljnice.push({
+    this.xmlObj.GlavaTemeljnice.push({
                           SifraVrsteTemeljnice: 'BD' ,
                           DatumTemeljnice: datum ,
                           OpisGlaveTemeljnice: opis
@@ -30,7 +30,7 @@ class BancniIzpisek{
   addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
 
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -44,7 +44,7 @@ class BancniIzpisek{
       })
 
     }else if(Number(stranka) !== 0 && Number(breme) !== 0){
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -58,7 +58,7 @@ class BancniIzpisek{
       })
 
     }else if(Number(stranka) === 0 && Number(dobro) !== 0){
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -67,7 +67,7 @@ class BancniIzpisek{
       })
     }else if(Number(stranka) === 0 && Number(breme) !== 0 ){
 
-      this.xmlObj.Temeljnica.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -88,7 +88,7 @@ class BancniIzpisek{
     return builder.buildObject(this.xmlObj);
   }
 
-  
+
 }
 
 module.exports = BancniIzpisek
