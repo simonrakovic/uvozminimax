@@ -1,0 +1,254 @@
+<miniMAXUvozKnjigovodstvo xmlns="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo.xsd">
+  <Stranke>
+    <Stranka>
+      <Sifra>14349229</Sifra>
+      <Naziv>NAPONTA KFT.</Naziv>
+      <Naslov>MONTEVIDEO U 5</Naslov>
+      <KraticaDrzave>HU</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>BUDAPEST</NazivPoste>
+      <DavcnaStevilka>14349229</DavcnaStevilka>
+      <IdentifikacijskaStevilka>14349229</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>7685152958</Sifra>
+      <Naziv>VITALIA NIKOLA LTD</Naziv>
+      <Naslov>ST. 516 NO. 10</Naslov>
+      <KraticaDrzave>MK</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste> SKOPJE</NazivPoste>
+      <DavcnaStevilka>7685152958</DavcnaStevilka>
+      <IdentifikacijskaStevilka>7685152958</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>5546217705</Sifra>
+      <Naziv>DUNYA93 GIDA SAN.VE DIS TIC LT</Naziv>
+      <Naslov>YAKUPLU CADDESI NO.9/3 BEYLIKD</Naslov>
+      <KraticaDrzave>TR</KraticaDrzave>
+      <PostnaStevilka>34524</PostnaStevilka>
+      <NazivPoste> ISTANBUL</NazivPoste>
+      <DavcnaStevilka>5546217705</DavcnaStevilka>
+      <IdentifikacijskaStevilka>5546217705</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>1846180850</Sifra>
+      <Naziv>MUELOLIVA Y MINERVA S.L.</Naziv>
+      <Naslov>CARRATERA A339 KM 24,5</Naslov>
+      <KraticaDrzave>ES</KraticaDrzave>
+      <PostnaStevilka>14800</PostnaStevilka>
+      <NazivPoste> PRIEGO DE CORDOBA</NazivPoste>
+      <DavcnaStevilka>1846180850</DavcnaStevilka>
+      <IdentifikacijskaStevilka>1846180850</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>9744251759</Sifra>
+      <Naziv>AMICA CHIPS SPA</Naziv>
+      <Naslov>VIA DELL'INDUSTRIA 57</Naslov>
+      <KraticaDrzave>IT</KraticaDrzave>
+      <PostnaStevilka>46043</PostnaStevilka>
+      <NazivPoste> CASTIGLIONE DELLE STIVIE</NazivPoste>
+      <DavcnaStevilka>9744251759</DavcnaStevilka>
+      <IdentifikacijskaStevilka>9744251759</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>5926181751</Sifra>
+      <Naziv>DAWTONA</Naziv>
+      <Naslov>BIENIEWICKA 52</Naslov>
+      <KraticaDrzave>PL</KraticaDrzave>
+      <PostnaStevilka>05-870</PostnaStevilka>
+      <NazivPoste> BLONIE</NazivPoste>
+      <DavcnaStevilka>5926181751</DavcnaStevilka>
+      <IdentifikacijskaStevilka>5926181751</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>148198291</Sifra>
+      <Naziv>PETER MERTES KG</Naziv>
+      <Naslov>BORNWIESE 4</Naslov>
+      <KraticaDrzave>DE</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>148198291</DavcnaStevilka>
+      <IdentifikacijskaStevilka>148198291</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>106531236</Sifra>
+      <Naziv>ASPIAG MANAGEMENT AG</Naziv>
+      <Naslov>INDUSTRIESTRASSE 64</Naslov>
+      <KraticaDrzave>CH</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>106531236</DavcnaStevilka>
+      <IdentifikacijskaStevilka>106531236</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>149877066</Sifra>
+      <Naziv>HERRES SEKT</Naziv>
+      <Naslov>RUDOLF-DIESEL STR. 7-9</Naslov>
+      <KraticaDrzave>DE</KraticaDrzave>
+      <PostnaStevilka>54292</PostnaStevilka>
+      <NazivPoste> TRIER</NazivPoste>
+      <DavcnaStevilka>149877066</DavcnaStevilka>
+      <IdentifikacijskaStevilka>149877066</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>6703164135</Sifra>
+      <Naziv>MAES HONEY INT., S.L.U.</Naziv>
+      <Naslov>CRTA DE VECINOS, CL-512</Naslov>
+      <KraticaDrzave>ES</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>6703164135</DavcnaStevilka>
+      <IdentifikacijskaStevilka>6703164135</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>811550366</Sifra>
+      <Naziv>TROLLI GMBH</Naziv>
+      <Naslov>OSTSTRASSE 94</Naslov>
+      <KraticaDrzave>DE</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>811550366</DavcnaStevilka>
+      <IdentifikacijskaStevilka>811550366</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>141788807</Sifra>
+      <Naziv>WURZENER NAHRUNGSMITTEL GMBH</Naziv>
+      <Naslov>AM MUEHLGRABEN 1</Naslov>
+      <KraticaDrzave>DE</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>141788807</DavcnaStevilka>
+      <IdentifikacijskaStevilka>141788807</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>222623219</Sifra>
+      <Naziv>AB ''VILNIAUS PERGALE''</Naziv>
+      <Naslov>V.A. GRAICIUNO 26</Naslov>
+      <KraticaDrzave>LT</KraticaDrzave>
+      <PostnaStevilka>02241</PostnaStevilka>
+      <NazivPoste> VILNIUS</NazivPoste>
+      <DavcnaStevilka>222623219</DavcnaStevilka>
+      <IdentifikacijskaStevilka>222623219</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>9139490156</Sifra>
+      <Naziv>CEREALVIT S.R.L.</Naziv>
+      <Naslov>VIA GRANDI 22/30</Naslov>
+      <KraticaDrzave>IT</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>9139490156</DavcnaStevilka>
+      <IdentifikacijskaStevilka>9139490156</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>6994819591</Sifra>
+      <Naziv>LA FLOR BURGALESA S.L.</Naziv>
+      <Naslov>C/ LOPEZ BRAVO 37, POL.IND.VIL</Naslov>
+      <KraticaDrzave>ES</KraticaDrzave>
+      <PostnaStevilka>09001</PostnaStevilka>
+      <NazivPoste> BURGOS</NazivPoste>
+      <DavcnaStevilka>6994819591</DavcnaStevilka>
+      <IdentifikacijskaStevilka>6994819591</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>176253934</Sifra>
+      <Naziv>SUNLIFE GMBH</Naziv>
+      <Naslov>SCHIERBUSCH 3</Naslov>
+      <KraticaDrzave>DE</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>176253934</DavcnaStevilka>
+      <IdentifikacijskaStevilka>176253934</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>6268054</Sifra>
+      <Naziv>S.C. CROCO S.R.L.</Naziv>
+      <Naslov>STR. CALEA SLANICULUI NR. 12</Naslov>
+      <KraticaDrzave>RO</KraticaDrzave>
+      <PostnaStevilka>601110</PostnaStevilka>
+      <NazivPoste> ONESTI</NazivPoste>
+      <DavcnaStevilka>6268054</DavcnaStevilka>
+      <IdentifikacijskaStevilka>6268054</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>7510001427</Sifra>
+      <Naziv>P.P.H.U. LUMAR LUCJAN WALKOWICZ</Naziv>
+      <Naslov>SŁONECZNA 11</Naslov>
+      <KraticaDrzave>PL</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>7510001427</DavcnaStevilka>
+      <IdentifikacijskaStevilka>7510001427</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>7891590885</Sifra>
+      <Naziv>P.P.H. BIFOOD SP. Z O.O.</Naziv>
+      <Naslov>HANDLOWE'BIFOOD'SPÓŁKA Z O.O.</Naslov>
+      <KraticaDrzave>PL</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>7891590885</DavcnaStevilka>
+      <IdentifikacijskaStevilka>7891590885</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>4457621525</Sifra>
+      <Naziv>ROYALSECT ZRT.</Naziv>
+      <Naslov>AGARDY TELEP</Naslov>
+      <KraticaDrzave>HU</KraticaDrzave>
+      <PostnaStevilka>6070</PostnaStevilka>
+      <NazivPoste> IZSAK</NazivPoste>
+      <DavcnaStevilka>4457621525</DavcnaStevilka>
+      <IdentifikacijskaStevilka>4457621525</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>4103509291</Sifra>
+      <Naziv>DELMES INT. D.O.O.</Naziv>
+      <Naslov>NI ZNANO</Naslov>
+      <KraticaDrzave>RS</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>4103509291</DavcnaStevilka>
+      <IdentifikacijskaStevilka>4103509291</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>9090983245</Sifra>
+      <Naziv>DRUKARNIA NESTORPACK DARIUSZ ZYSIEK</Naziv>
+      <Naslov>LUDWINOW 12A</Naslov>
+      <KraticaDrzave>PL</KraticaDrzave>
+      <PostnaStevilka>1000</PostnaStevilka>
+      <NazivPoste>NI ZANANO</NazivPoste>
+      <DavcnaStevilka>9090983245</DavcnaStevilka>
+      <IdentifikacijskaStevilka>9090983245</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>8374810222</Sifra>
+      <Naziv>DULCES Y CONSERVAS HELIOS, S.A</Naziv>
+      <Naslov>CARRETERA SALAMANCA, 44</Naslov>
+      <KraticaDrzave>ES</KraticaDrzave>
+      <PostnaStevilka>47195</PostnaStevilka>
+      <NazivPoste> ARROYO DE LA ENCO.,VALLA</NazivPoste>
+      <DavcnaStevilka>8374810222</DavcnaStevilka>
+      <IdentifikacijskaStevilka>8374810222</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>9530398013</Sifra>
+      <Naziv>PREZIOSI FOOD SRL</Naziv>
+      <Naslov>VIA GIOBERTI 1</Naslov>
+      <KraticaDrzave>IT</KraticaDrzave>
+      <PostnaStevilka>20123</PostnaStevilka>
+      <NazivPoste> MILANO</NazivPoste>
+      <DavcnaStevilka>9530398013</DavcnaStevilka>
+      <IdentifikacijskaStevilka>9530398013</IdentifikacijskaStevilka>
+    </Stranka>
+    <Stranka>
+      <Sifra>7853601440</Sifra>
+      <Naziv>SOLEN CIKOLATA GIDA SAN.VE TIC</Naziv>
+      <Naslov>2.ORGANIZE SANAYI BOLGESI DOGU</Naslov>
+      <KraticaDrzave>TR</KraticaDrzave>
+      <PostnaStevilka>27120</PostnaStevilka>
+      <NazivPoste> BASPINAR-GAZIANTEP</NazivPoste>
+      <DavcnaStevilka>7853601440</DavcnaStevilka>
+      <IdentifikacijskaStevilka>7853601440</IdentifikacijskaStevilka>
+    </Stranka>
+  </Stranke>
+</miniMAXUvozKnjigovodstvo>
