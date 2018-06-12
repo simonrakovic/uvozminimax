@@ -10,7 +10,9 @@ class BancniIzpisek{
     this.xmlObj = {
 
         GlavaTemeljnice:[],
-        VrsticeTemeljnice:[]
+        VrsticeTemeljnice:[{
+          VrsticaTemeljnice:[]
+        }]
 
     }
 
@@ -28,9 +30,9 @@ class BancniIzpisek{
 
 
   addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
-
+    if(!Number(stranka) && stranka)stranka = "0"+Number(stranka.replace(/\D/g,''))
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -44,7 +46,7 @@ class BancniIzpisek{
       })
 
     }else if(Number(stranka) !== 0 && Number(breme) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -58,7 +60,7 @@ class BancniIzpisek{
       })
 
     }else if(Number(stranka) === 0 && Number(dobro) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -67,7 +69,7 @@ class BancniIzpisek{
       })
     }else if(Number(stranka) === 0 && Number(breme) !== 0 ){
 
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,

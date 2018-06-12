@@ -10,7 +10,9 @@ class PrejetRacun{
     this.xmlObj = {
 
         GlavaTemeljnice:[],
-        VrsticeTemeljnice:[]
+        VrsticeTemeljnice:[{
+          VrsticaTemeljnice:[]
+        }]
       }
 
 
@@ -19,6 +21,7 @@ class PrejetRacun{
 
 
   addGlavaTemeljnice(datum, opis){
+    if(moment(datum, 'YYYY-MM-DD').year() !== moment(Date.now()).year())datum = "2018-01-01"
     this.xmlObj.GlavaTemeljnice.push({
                           SifraVrsteTemeljnice: 'PR' ,
                           DatumTemeljnice: datum ,
@@ -28,9 +31,9 @@ class PrejetRacun{
 
 
   addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
-
+    if(!Number(stranka) && stranka)stranka = "0"+Number(stranka.replace(/\D/g,''))
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -44,7 +47,7 @@ class PrejetRacun{
       })
 
     }else if(Number(stranka) !== 0 && Number(breme) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -58,7 +61,7 @@ class PrejetRacun{
       })
 
     }else if(Number(stranka) === 0 && Number(dobro) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -67,7 +70,7 @@ class PrejetRacun{
       })
     }else if(Number(stranka) === 0 && Number(breme) !== 0 ){
 
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,

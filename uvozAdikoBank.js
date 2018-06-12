@@ -6,7 +6,7 @@ const BancniIzpisek = require('./bancniIzpiskiToXml/bancniIzpisek')
       XLSX = require('xlsx');
       moment = require('moment')
       stranke = require('./data/strankeJSON')
-
+      kontniPlan = require('./data/kontniPlanJSON')
 
 
 function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
@@ -78,13 +78,13 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
     var izpisekData = bancniIzpiskiAdiko[i+""]
     var stIzpiska = ""
     var datumIzpiska = ""
-
+    var opisKnjizbe = ""
     var bancniIzpisek = new BancniIzpisek()
 
     izpisekData.forEach((postavka)=>{
       stIzpiska = postavka.DOKUMENT
       datumIzpiska = postavka.DATUM_DOKUMENTA
-      bancniIzpisek.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA,postavka.PARTNER, postavka.KONTO, postavka.DEBET, postavka.KREDIT,postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
+      opisKnjizbe = postavka.OPIS_DOKUMENTA
 
       if(postavka.KONTO === '1200'){
         ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA)
@@ -103,6 +103,9 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
       }else{
         console.log("Nedefinirana postavka v izpisku "+postavka)
       }
+
+      if(otvoritve[postavka.VEZA])opisKnjizbe = "OTV2017-"+opisKnjizbe
+      bancniIzpisek.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, opisKnjizbe)
     })
     xmlname += "_"+stIzpiska
     bancniIzpisek.addGlavaTemeljnice(foramtDate(datumIzpiska), "ADIKO BANK izpisek "+ stIzpiska)
@@ -131,9 +134,9 @@ function ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, veza, id_knjizbe_na_iz
         datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
         opisTemeljnice = "IR: "+ postavka.DOKUMENT
         idKnjizbe = postavka.ID_KNJIZBE
-        znesekKnjizbe = postavka.DEBET
+        znesekKnjizbe = parseFloat(postavka.DEBET).toFixed(2)
       }
-      izdanRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA,postavka.PARTNER, postavka.KONTO, postavka.DEBET, postavka.KREDIT,postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
+      izdanRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
 
     })
 
@@ -152,28 +155,10 @@ function ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, veza, id_knjizbe_na_iz
     var datumTemeljnice = ""
     var opisTemeljnice = ""
 
-    otvoritve[veza].forEach((postavka)=>{
-      if(postavka.KONTO === '1200'){
-        datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
-        opisTemeljnice = "IR: "+ postavka.DOKUMENT
-        idKnjizbe = postavka.ID_KNJIZBA
-        znesekKnjizbe = postavka.DEBET
-      }
-      izdanRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA,postavka.PARTNER, postavka.KONTO, postavka.DEBET, postavka.KREDIT,postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
-
-    })
-
-    izdanRacun.addGlavaTemeljnice(datumTemeljnice, opisTemeljnice)
-    uvoz.addTemeljnica(izdanRacun.xmlObj)
-
-    //console.log(idKnjizbe+"|"+id_knjizbe_na_izpisku+"|"+znesekKnjizbe)
-    var zapiranje = new Zapiranje(idKnjizbe, id_knjizbe_na_izpisku, znesekKnjizbe)
-    uvoz.addZapiranje(zapiranje.xmlObj)
-
 
     //logiranje otvoritev
     uvoz.addOtvoritev(veza)
-    return izdanRacunXML
+    return null
   }else{
     // logiranje neUvozenihRacunov
     uvoz.addNeUvozeniRacuni(veza)
@@ -198,9 +183,9 @@ function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_
         datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
         opisTemeljnice = "IR: "+ postavka.DOKUMENT
         idKnjizbe = postavka.ID_KNJIZBE
-        znesekKnjizbe = postavka.KREDIT
+        znesekKnjizbe = parseFloat(postavka.KREDIT).toFixed(2)
       }
-      prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA,postavka.PARTNER, postavka.KONTO, postavka.DEBET, postavka.KREDIT,postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
+      prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
 
     })
 
@@ -218,33 +203,11 @@ function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_
 
   }else if(otvoritve[veza]){
 
-    var datumTemeljnice = ""
-    var opisTemeljnice = ""
-
-    otvoritve[veza].forEach((postavka)=>{
-      if(postavka.KONTO === '2200' || postavka.KONTO === '2211' || postavka.KONTO === '2210'){
-        datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
-        opisTemeljnice = "IR: "+ postavka.DOKUMENT
-        idKnjizbe = postavka.ID_KNJIZBE
-        znesekKnjizbe = postavka.KREDIT
-
-
-
-      }
-      prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA,postavka.PARTNER, postavka.KONTO, postavka.DEBET, postavka.KREDIT,postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
-
-    })
-
-    prejetRacun.addGlavaTemeljnice(datumTemeljnice, opisTemeljnice)
-    uvoz.addTemeljnica(prejetRacun.xmlObj)
-
-    var zapiranje = new Zapiranje(idKnjizbe, id_knjizbe_na_izpisku, znesekKnjizbe)
-    uvoz.addZapiranje(zapiranje.xmlObj)
 
     //logTemeljnica(izdanRacun)
     //logiranje otvoritev
     uvoz.addOtvoritev(veza)
-    return prejetRacun
+    return null
   }else{
     // logiranje neUvozenihRacunov
     uvoz.addNeUvozeniRacuni(veza)
@@ -256,7 +219,7 @@ function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_
 
 
 function foramtDate(date){
-  return moment(ExcelDateToJSDate(date)).format('DD-MM-YYYY')
+  return moment(ExcelDateToJSDate(date)).format('YYYY-MM-DD')
 }
 
 function ExcelDateToJSDate(date) {

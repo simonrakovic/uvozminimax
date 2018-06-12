@@ -1,6 +1,6 @@
 const fs = require('fs'),
     xml2js = require('xml2js');
-
+    moment = require('moment')
 const parser = new xml2js.Parser();
 const builder = new xml2js.Builder({headless: true});
 
@@ -9,12 +9,15 @@ class IzdanRacun{
   constructor(){
     this.xmlObj = {
         GlavaTemeljnice:[],
-        VrsticeTemeljnice:[]
+        VrsticeTemeljnice:[{
+          VrsticaTemeljnice:[]
+        }]
       }
 
   }
 
   addGlavaTemeljnice(datum, opis){
+    if(moment(datum, 'YYYY-MM-DD').year() !== moment(Date.now()).year())datum = "2018-01-01"
     this.xmlObj.GlavaTemeljnice.push({
                           SifraVrsteTemeljnice: 'IR' ,
                           DatumTemeljnice: datum ,
@@ -23,9 +26,9 @@ class IzdanRacun{
   }
 
   addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
-
+    if(!Number(stranka) && stranka)stranka = "0"+Number(stranka.replace(/\D/g,''))
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -39,7 +42,7 @@ class IzdanRacun{
       })
 
     }else if(Number(stranka) !== 0 && Number(breme) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -53,7 +56,7 @@ class IzdanRacun{
       })
 
     }else if(Number(stranka) === 0 && Number(dobro) !== 0){
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
@@ -62,7 +65,7 @@ class IzdanRacun{
       })
     }else if(Number(stranka) === 0 && Number(breme) !== 0 ){
 
-      this.xmlObj.VrsticeTemeljnice.push({
+      this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
         OpisVrsticeTemeljnice: opis ,
         SifraKonta: konto,
