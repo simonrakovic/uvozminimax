@@ -7,9 +7,10 @@ class Zapiranje{
     this.xmlObj = {
           StevilkaZapiraneKnjizbe: StevilkaZapiraneKnjizbe,
           StevilkaZapirajoceKnjizbe: StevilkaZapirajoceKnjizbe,
-          ZnesekVDomaciDenarniEnoti: ZnesekVDomaciDenarniEnoti
+          Znesek: ZnesekVDomaciDenarniEnoti,
+          ZnesekVDomaciDenarniEnoti: ZnesekVDomaciDenarniEnoti,
         }
-    
+
   }
 
 

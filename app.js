@@ -1,2 +1,2 @@
 const uvozAdiko = require('./uvozAdikoBank')
-uvozAdiko(1,1)
+uvozAdiko(16,20)

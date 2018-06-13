@@ -87,21 +87,19 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
       opisKnjizbe = postavka.OPIS_DOKUMENTA
 
       if(postavka.KONTO === '1200'){
-        ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA)
+        ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
 
       }else if(postavka.KONTO === '2211' || postavka.KONTO === '2210' ){
-        ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA)
+        ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
 
       }else if(postavka.KONTO === '2200' && postavka.VEZA !== 'PROVIZIJA'){
-        ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA)
+        ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
 
       }else if(postavka.KONTO === '2200' && postavka.VEZA === 'PROVIZIJA'){
 
 
       }else if(postavka.KONTO === '1100'){
 
-      }else{
-        console.log("Nedefinirana postavka v izpisku "+postavka)
       }
 
       if(otvoritve[postavka.VEZA])opisKnjizbe = "OTV2017-"+opisKnjizbe
@@ -119,13 +117,13 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
 //////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-function ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, veza, id_knjizbe_na_izpisku){
+function ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, veza, id_knjizbe_na_izpisku, stranka){
   var izdanRacun = new IzdanRacun()
   var izdanRacunXML = ""
   var idKnjizbe = ""
   var znesekKnjizbe = ""
 
-  if(izdaniRacuni[veza]){
+  if(izdaniRacuni[veza] ){
     var datumTemeljnice = ""
     var opisTemeljnice = ""
 
@@ -133,10 +131,10 @@ function ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, veza, id_knjizbe_na_iz
       if(postavka.KONTO === '1200'){
         datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
         opisTemeljnice = "IR: "+ postavka.DOKUMENT
-        idKnjizbe = postavka.ID_KNJIZBE
+        idKnjizbe = postavka.ID_KNJIZBA
         znesekKnjizbe = parseFloat(postavka.DEBET).toFixed(2)
       }
-      izdanRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
+      izdanRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
 
     })
 
@@ -155,51 +153,57 @@ function ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, veza, id_knjizbe_na_iz
     var datumTemeljnice = ""
     var opisTemeljnice = ""
 
-
     //logiranje otvoritev
     uvoz.addOtvoritev(veza)
     return null
   }else{
     // logiranje neUvozenihRacunov
-    uvoz.addNeUvozeniRacuni(veza)
+    uvoz.addNeUvozeniRacuni({veza: veza, idKnjizbe: id_knjizbe_na_izpisku})
     //console.log(veza)
     return null
   }
 
 }
 
-function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_izpisku){
+function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_izpisku, stranka){
   var prejetRacun = new PrejetRacun()
   var idKnjizbe = ""
   var znesekKnjizbe = ""
   var prejetRacunXML = ""
-
-  if(prejetiRacuni[veza]){
+  
+  if(prejetiRacuni[veza] ){
     var datumTemeljnice = ""
     var opisTemeljnice = ""
-
+    var partner = ""
     prejetiRacuni[veza].forEach((postavka)=>{
       if(postavka.KONTO === '2200' || postavka.KONTO === '2211' || postavka.KONTO === '2210'){
         datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
         opisTemeljnice = "IR: "+ postavka.DOKUMENT
-        idKnjizbe = postavka.ID_KNJIZBE
+        idKnjizbe = postavka.ID_KNJIZBA
         znesekKnjizbe = parseFloat(postavka.KREDIT).toFixed(2)
+        partner = postavka.PARTNER
       }
-      prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
+
+      prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
 
     })
 
-    prejetRacun.addGlavaTemeljnice(datumTemeljnice, opisTemeljnice)
-    uvoz.addTemeljnica(prejetRacun.xmlObj)
+    //console.log(stranka, partner)
+    if(partner === stranka){
+      prejetRacun.addGlavaTemeljnice(datumTemeljnice, opisTemeljnice)
+      uvoz.addTemeljnica(prejetRacun.xmlObj)
 
-    var zapiranje = new Zapiranje(idKnjizbe, id_knjizbe_na_izpisku, znesekKnjizbe)
-    uvoz.addZapiranje(zapiranje.xmlObj)
+      var zapiranje = new Zapiranje(idKnjizbe, id_knjizbe_na_izpisku, znesekKnjizbe)
+      uvoz.addZapiranje(zapiranje.xmlObj)
 
+      //logiranje uvozenih prjetih racunovs
+      uvoz.addUvozenPrejetRacun(veza)
 
-    //logiranje uvozenih prjetih racunovs
-    uvoz.addUvozenPrejetRacun(veza)
+      return prejetRacunXML
+    }else{
+      uvoz.addNeUvozeniRacuni({veza: veza, idKnjizbe: id_knjizbe_na_izpisku})
+    }
 
-    return prejetRacunXML
 
   }else if(otvoritve[veza]){
 
@@ -210,7 +214,18 @@ function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_
     return null
   }else{
     // logiranje neUvozenihRacunov
-    uvoz.addNeUvozeniRacuni(veza)
+    var jeOtvoritev = false
+    Object.keys(otvoritve).forEach((key)=>{
+      otvoritve[key].forEach((otv)=>{
+        if(otv.VEZA === veza){
+          jeOtvoritev = true
+          return
+        }
+      })
+      if(jeOtvoritev)return
+    })
+    if(jeOtvoritev)uvoz.addOtvoritev(veza)
+    else uvoz.addNeUvozeniRacuni({veza: veza, idKnjizbe: id_knjizbe_na_izpisku})
     //console.log(veza)
     return null
   }

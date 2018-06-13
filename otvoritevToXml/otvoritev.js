@@ -35,7 +35,7 @@ class Otvoritev{
   addGlavaTemeljnice(datum, opis){
     if(moment(datum, 'YYYY-MM-DD').year() !== moment(Date.now()).year())datum = "2018-01-01"
     this.xmlObj.GlavaTemeljnice.push({
-                          SifraVrsteTemeljnice: 'PR' ,
+                          SifraVrsteTemeljnice: 'OTV' ,
                           DatumTemeljnice: datum ,
                           OpisGlaveTemeljnice: opis
                         })
@@ -47,7 +47,7 @@ class Otvoritev{
       stranka = Number(stranka.replace(/\D/g,''))+""
       if(stranka.lenghth === 8)stranka += "0"
     }
-    
+
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
       this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
