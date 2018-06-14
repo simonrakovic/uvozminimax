@@ -1,9 +1,11 @@
 const XLSX = require('xlsx');
       fs = require('fs')
       moment = require('moment')
-      PrejetRacun = require('./prejetRacun')
+      PrejetRacun = require('./prejetRacun').PrejetRacun
+      PrejetiRacuni = require('./prejetRacun').PrejetiRacuni
       util = require('util')
       stranke = require('./../data/strankeJSON')
+      kontniPlan = require('./../data/kontniPlanJSON')
 
 var workbook = XLSX.readFile('../data/GK_KNJIZBA.xls');
 var worksheet = workbook.Sheets.GK;
@@ -44,7 +46,7 @@ data.forEach((obj)=>{
 
 })
 
-
+var prejetiRacuniXML = new PrejetiRacuni()
 Object.keys(prejetiRacuni).forEach((key)=>{
   var prejetRacun = new PrejetRacun()
   var opisTemeljnice = ""
@@ -54,18 +56,26 @@ Object.keys(prejetiRacuni).forEach((key)=>{
       opisTemeljnice = "PR: "+postavka.DOKUMENT
       datumtemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
     }
-    prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), foramtDate(postavka.ROK_PLACILA), postavka.DATUM_DOKUMENTA,
-                                        postavka.PARTNER, postavka.KONTO, postavka.DEBET, postavka.KREDIT,
-                                        postavka.VEZA, postavka.ID_KNJIZBE, postavka.OPIS_DOKUMENTA)
+    prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA),
+                                      postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA),
+                                      postavka.DATUM_DOKUMENTA,
+                                      stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV,
+                                      kontniPlan[postavka.KONTO],
+                                      parseFloat(postavka.DEBET).toFixed(2),
+                                      parseFloat(postavka.KREDIT).toFixed(2),
+                                      postavka.VEZA,
+                                      postavka.ID_KNJIZBA,
+                                      postavka.OPIS_DOKUMENTA)
+
 
   })
   prejetRacun.addGlavaTemeljnice(datumtemeljnice, opisTemeljnice)
-  console.log(prejetRacun.toString())
 
+  prejetiRacuniXML.addPrejetRacun(prejetRacun)
 })
 
 
-//console.log(izdaniRacuni);
+console.log(prejetiRacuniXML.toString());
 
 /*
 

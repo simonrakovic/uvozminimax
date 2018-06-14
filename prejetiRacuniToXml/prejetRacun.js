@@ -4,6 +4,31 @@ const fs = require('fs'),
 const parser = new xml2js.Parser();
 const builder = new xml2js.Builder({headless: true});
 
+class PrejetiRacuni{
+  constructor(){
+    this.xmlObj = {
+       miniMAXUvozKnjigovodstvo:{
+          '$':{ xmlns: 'http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo',
+              'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
+              'xsi:schemaLocation': 'http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo http://moj.minimax.si/ip/doc/schemas/miniMAXUvozKnjigovodstvo.xsd' },
+           Temeljnice: [
+             {
+               Temeljnica:[]
+             }
+           ],
+         }
+      }
+  }
+
+  addPrejetRacun(prejetRacun){
+    this.xmlObj.miniMAXUvozKnjigovodstvo.Temeljnice[0].Temeljnica.push(prejetRacun.xmlObj)
+  }
+
+  toString(){
+    return builder.buildObject(this.xmlObj);
+  }
+}
+
 
 class PrejetRacun{
   constructor(){
@@ -31,7 +56,7 @@ class PrejetRacun{
 
 
   addVrsticaTemeljnice(datum, datum_zapadlosti, datum_opravljanja, stranka, konto, breme, dobro, veza, id_knjizbe, opis){
-    if(!Number(stranka) && stranka)stranka = "0"+Number(stranka.replace(/\D/g,''))
+    if(!Number(stranka) && stranka)stranka = "0"+Number(stranka.toString().replace(/\D/g,''))
     if(Number(stranka) !== 0 && Number(dobro) !== 0){
       this.xmlObj.VrsticeTemeljnice[0].VrsticaTemeljnice.push({
         DatumKnjizbe: datum,
@@ -95,4 +120,4 @@ class PrejetRacun{
 
 
 
-module.exports = PrejetRacun
+module.exports = {PrejetRacun, PrejetiRacuni}

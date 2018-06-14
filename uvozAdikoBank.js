@@ -38,6 +38,8 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
   data.shift();
 
 
+
+
   let prejetiRacuni = {}
   let izdaniRacuni = {}
   let bancniIzpiskiAdiko = {}
@@ -90,10 +92,10 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
         ustvariIzdanracun(uvoz, izdaniRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
 
       }else if(postavka.KONTO === '2211' || postavka.KONTO === '2210' ){
-        ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
+        //ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
 
       }else if(postavka.KONTO === '2200' && postavka.VEZA !== 'PROVIZIJA'){
-        ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
+        //ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, postavka.VEZA, postavka.ID_KNJIZBA, postavka.PARTNER)
 
       }else if(postavka.KONTO === '2200' && postavka.VEZA === 'PROVIZIJA'){
 
@@ -170,7 +172,7 @@ function ustvariPrejetRacun(uvoz, prejetiRacuni, otvoritve, veza, id_knjizbe_na_
   var idKnjizbe = ""
   var znesekKnjizbe = ""
   var prejetRacunXML = ""
-  
+
   if(prejetiRacuni[veza] ){
     var datumTemeljnice = ""
     var opisTemeljnice = ""
