@@ -7,7 +7,7 @@ const XLSX = require('xlsx');
       stranke = require('./../data/strankeJSON')
       kontniPlan = require('./../data/kontniPlanJSON')
 
-var workbook = XLSX.readFile('../data/GK_KNJIZBA.xls');
+var workbook = XLSX.readFile('../data/Knjizbe.xls');
 var worksheet = workbook.Sheets.GK;
 var headers = {};
 var data = [];
@@ -35,10 +35,12 @@ data.shift();
 
 //let izdaniRacuni = data.filter((obj)=> obj.SIMBOL === 2)
 let prejetiRacuni = {}
-let counter = 1
+let counter = 0
+let bremeTotal = 0
+let dobroTotal = 0
 data.forEach((obj)=>{
 
-  if(obj.SIMBOL === 9 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() === 0 ){
+  if(obj.SIMBOL === 9 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() === 3 ){
     //console.log(moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)))
     if(prejetiRacuni[obj.DOKUMENT])prejetiRacuni[obj.DOKUMENT].push(obj)
     else prejetiRacuni[obj.DOKUMENT] = [obj]
@@ -52,9 +54,15 @@ Object.keys(prejetiRacuni).forEach((key)=>{
   var opisTemeljnice = ""
   var datumtemeljnice = ""
   prejetiRacuni[key].forEach((postavka)=>{
-    if(postavka.KONTO == '1200' || postavka.KONTO == '2200'){
-      opisTemeljnice = "PR: "+postavka.DOKUMENT
+    if(postavka.KONTO === '1200' || postavka.KONTO === '2200' || postavka.KONTO === '2211'
+        || postavka.KONTO === '2210' || kontniPlan[postavka.KONTO] === '28502'
+        || kontniPlan[postavka.KONTO] === '27500'){
+
+      opisTemeljnice = "PR: "+postavka.DOKUMENT ? postavka.DOKUMENT:postavka.VEZA
       datumtemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
+      bremeTotal += postavka.DEBET
+      dobroTotal += postavka.KREDIT
+
     }
     prejetRacun.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA),
                                       postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA),
@@ -65,17 +73,22 @@ Object.keys(prejetiRacuni).forEach((key)=>{
                                       parseFloat(postavka.KREDIT).toFixed(2),
                                       postavka.VEZA,
                                       postavka.ID_KNJIZBA,
-                                      postavka.OPIS_DOKUMENTA)
+                                      postavka.OPIS_DOKUMENTA ? postavka.OPIS_DOKUMENTA: postavka.VEZA)
 
 
   })
+  counter++
+
   prejetRacun.addGlavaTemeljnice(datumtemeljnice, opisTemeljnice)
 
   prejetiRacuniXML.addPrejetRacun(prejetRacun)
 })
 
+fs.writeFile("izvozPrejetiRacuni_04_2018.xml",prejetiRacuniXML.toString(), (err)=>{
+  console.log(err)
+})
 
-console.log(prejetiRacuniXML.toString());
+console.log("Skupaj v breme: %s | Skupaj v dobro: %s | St. vseh racunov: %s", bremeTotal, dobroTotal, counter);
 
 /*
 
