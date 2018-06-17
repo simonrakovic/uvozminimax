@@ -7,6 +7,7 @@ class Uvoz{
     this.otvoritve = []
     this.neuvozeniRacuni = []
     this.uvozeniIzdaniRacuni = []
+    this.uvozeniIzdaniRacuniByVeza = {}
     this.uvozeniPrejetiRacuni = []
     this.objData = {
        miniMAXUvozKnjigovodstvo:{
@@ -50,9 +51,14 @@ class Uvoz{
     this.objData.miniMAXUvozKnjigovodstvo.Zapiranja[0].Zapiranje.push(zapiranje)
   }
 
+  addUvozeniIzdaniRacuniByVeza(obj){
+    this.uvozeniIzdaniRacuniByVeza[obj.VEZA] = obj.ID_KNJIZBA
+  }
+
   toString(){
     return builder.buildObject(this.objData);
   }
+
 
 
   createLog(filename){

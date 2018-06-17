@@ -1,2 +1,2 @@
-const uvozAdiko = require('./uvozAdikoBank')
-uvozAdiko(1,10)
+const uvozNLB = require('./uvozNLB')
+uvozNLB(1,92)

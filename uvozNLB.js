@@ -9,7 +9,7 @@ const BancniIzpisek = require('./bancniIzpiskiToXml/bancniIzpisek')
       kontniPlan = require('./data/kontniPlanJSON')
 
 
-function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
+function uvozNLB(st_izpiska_od, st_izpiska_do){
   var workbook = XLSX.readFile('data/Knjizbe.xls');
   var worksheet = workbook.Sheets.GK;
   var headers = {};
@@ -51,7 +51,7 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
       if(prejetiRacuni[obj.VEZA])prejetiRacuni[obj.VEZA].push(obj)
       else prejetiRacuni[obj.VEZA] = [obj]
 
-    }else if(obj.SIMBOL === 11 ){
+    }else if(obj.SIMBOL === 8 ){
       if(bancniIzpiskiAdiko[obj.DOKUMENT])bancniIzpiskiAdiko[obj.DOKUMENT].push(obj)
       else bancniIzpiskiAdiko[obj.DOKUMENT] = [obj]
 
@@ -113,7 +113,7 @@ function uvozAdikoBank(st_izpiska_od, st_izpiska_do){
       bancniIzpisek.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, opisKnjizbe)
     })
     //xmlname += "_"+stIzpiska
-    bancniIzpisek.addGlavaTemeljnice(foramtDate(datumIzpiska), "ADIKO BANK izpisek "+ stIzpiska)
+    bancniIzpisek.addGlavaTemeljnice(foramtDate(datumIzpiska), "NLB izpisek "+ stIzpiska)
     //logTemeljnica(bancniIzpisek)
     uvoz.addTemeljnica(bancniIzpisek.xmlObj)
   }
@@ -252,4 +252,4 @@ function ExcelDateToJSDate(date) {
 }
 
 
-module.exports = uvozAdikoBank
+module.exports = uvozNLB

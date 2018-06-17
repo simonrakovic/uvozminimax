@@ -1,8 +1,6 @@
 const fs = require('fs')
       XLSX = require('xlsx');
 
-
-
 var logObj = {
   neuvozeniRacuni: [],
   otvoritve:[],
@@ -10,7 +8,7 @@ var logObj = {
   uvozeniIzdaniRacuni:[]
 }
 
-function getNeuvozeniRacuni(cb){
+var getLogiraniIzdaniRacuni = (cb)=>{
   fs.readdir('.', (err, files) => {
     var counter = 0
     var end = counter > files.length-1
@@ -27,9 +25,18 @@ function getNeuvozeniRacuni(cb){
       }
       counter++
     });
-    cb(logObj.neuvozeniRacuni)
+    cb(logObj.uvozeniIzdaniRacuni)
   })
 }
+
+getLogiraniIzdaniRacuni((data)=>{
+  console.log(data.toString())
+})
+
+
+module.exports = getLogiraniIzdaniRacuni
+
+/*
 
 
 
@@ -84,7 +91,7 @@ data.forEach((obj)=>{
 
 
 getNeuvozeniRacuni((logs)=>{
-  console.log(logs)
+
   logs.forEach((log)=>{
     //console.log(izpiski[log.idKnjizbe].KONTO)
     if(izpiski[log.idKnjizbe].KONTO === "2200" || izpiski[log.idKnjizbe].KONTO === "2210" || izpiski[log.idKnjizbe].KONTO === "2211"){
@@ -105,3 +112,4 @@ getNeuvozeniRacuni((logs)=>{
     }
   })
 })
+*/
