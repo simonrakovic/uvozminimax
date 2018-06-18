@@ -40,7 +40,7 @@ let bremeTotal = 0
 let dobroTotal = 0
 data.forEach((obj)=>{
 
-  if(obj.SIMBOL === 9 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5 ){
+  if(obj.SIMBOL === 9 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5 ){
     //console.log(moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)))
     if(prejetiRacuni[obj.DOKUMENT])prejetiRacuni[obj.DOKUMENT].push(obj)
     else prejetiRacuni[obj.DOKUMENT] = [obj]
@@ -84,7 +84,7 @@ Object.keys(prejetiRacuni).forEach((key)=>{
   prejetiRacuniXML.addPrejetRacun(prejetRacun)
 })
 
-fs.writeFile("izvozPrejetiRacuni_01-05_2018.xml",prejetiRacuniXML.toString(), (err)=>{
+fs.writeFile("izvozPrejetiRacuni_ostalo_2018.xml",prejetiRacuniXML.toString(), (err)=>{
   console.log(err)
 })
 

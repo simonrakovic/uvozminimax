@@ -8,7 +8,7 @@ const XLSX = require('xlsx');
 
 
 
-var workbook = XLSX.readFile(__dirname+'/../data/GK_KNJIZBA.xls');
+var workbook = XLSX.readFile(__dirname+'/../data/Knjizbe.xls');
 var worksheet = workbook.Sheets.GK;
 var headers = {};
 var data = [];

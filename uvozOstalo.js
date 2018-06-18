@@ -139,23 +139,23 @@ let counterNajemnine = 1
 
 data.forEach((obj)=>{
 
-  if(obj.SIMBOL === 4 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5){
+  if(obj.SIMBOL === 4 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5){
     if(eracuni[obj.DOKUMENT])eracuni[obj.DOKUMENT].push(obj)
     else eracuni[obj.DOKUMENT] = [obj]
 
-  }else if(obj.SIMBOL === 6 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5){
+  }else if(obj.SIMBOL === 6 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5){
     if(place[obj.DOKUMENT])place[obj.DOKUMENT].push(obj)
     else place[obj.DOKUMENT] = [obj]
 
-  }else if(obj.SIMBOL === 16 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5){
+  }else if(obj.SIMBOL === 16 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5){
     if(kompenzacije[obj.DOKUMENT])kompenzacije[obj.DOKUMENT].push(obj)
     else kompenzacije[obj.DOKUMENT] = [obj]
 
-  }else if(obj.SIMBOL === 5 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5){
+  }else if(obj.SIMBOL === 5 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5){
     if(temeljnice[obj.DOKUMENT])temeljnice[obj.DOKUMENT].push(obj)
     else temeljnice[obj.DOKUMENT] = [obj]
 
-  }else if(obj.SIMBOL === 10 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5){
+  }else if(obj.SIMBOL === 10 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5){
     if(najemnine[obj.DOKUMENT])najemnine[obj.DOKUMENT].push(obj)
     else najemnine[obj.DOKUMENT] = [obj]
   }
@@ -168,7 +168,7 @@ Object.keys(place).forEach((key)=>{
     placeXML.type = "OP"
     var datumTemeljnice = ""
     var opisTemeljnice = ""
-    
+
     place[key].forEach((postavka)=>{
       datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
       opisTemeljnice = "PLAČA "+postavka.DOKUMENT
@@ -191,7 +191,7 @@ Object.keys(temeljnice).forEach((key)=>{
     var opisTemeljnice = ""
 
     temeljnice[key].forEach((postavka)=>{
-      datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
+      datumTemeljnice =  moment(foramtDate(postavka.DATUM_DOKUMENTA)).year() === moment(Date.now()).year() ? foramtDate(postavka.DATUM_DOKUMENTA): "2018-01-01"
       opisTemeljnice = postavka.DOKUMENT
       if(!kontniPlan[postavka.KONTO])console.log("Konto "+postavka.KONTO+" ne obstaja!")
       temeljniceXML.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
@@ -209,7 +209,7 @@ Object.keys(kompenzacije).forEach((key)=>{
     var opisTemeljnice = ""
 
     kompenzacije[key].forEach((postavka)=>{
-      datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
+      datumTemeljnice =  moment(foramtDate(postavka.DATUM_DOKUMENTA)).year() === moment(Date.now()).year() ? foramtDate(postavka.DATUM_DOKUMENTA): "2018-01-01"
       opisTemeljnice = postavka.OPIS_DOKUMENT
       if(!kontniPlan[postavka.KONTO])console.log("Konto "+postavka.KONTO+" ne obstaja!")
       kompenzacijeXML.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
@@ -228,7 +228,7 @@ Object.keys(eracuni).forEach((key)=>{
     var opisTemeljnice = ""
 
     eracuni[key].forEach((postavka)=>{
-      datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
+      datumTemeljnice =  moment(foramtDate(postavka.DATUM_DOKUMENTA)).year() === moment(Date.now()).year() ? foramtDate(postavka.DATUM_DOKUMENTA): "2018-01-01"
       opisTemeljnice = "e-racun: "+postavka.DOKUMENT
       if(!kontniPlan[postavka.KONTO])console.log("Konto "+postavka.KONTO+" ne obstaja!")
       eracuniXML.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)
@@ -247,7 +247,7 @@ Object.keys(najemnine).forEach((key)=>{
     var opisTemeljnice = ""
 
     najemnine[key].forEach((postavka)=>{
-      datumTemeljnice = foramtDate(postavka.DATUM_DOKUMENTA)
+      datumTemeljnice =  moment(foramtDate(postavka.DATUM_DOKUMENTA)).year() === moment(Date.now()).year() ? foramtDate(postavka.DATUM_DOKUMENTA): "2018-01-01"
       opisTemeljnice = "NAJEMNINE "+postavka.DOKUMENT
       if(!kontniPlan[postavka.KONTO])console.log("Konto "+postavka.KONTO+" ne obstaja!")
       najemnineXML.addVrsticaTemeljnice(foramtDate(postavka.DATUM_DOKUMENTA), postavka.ROK_PLACILA ? foramtDate(postavka.ROK_PLACILA): foramtDate(postavka.DATUM_DOKUMENTA), postavka.DATUM_DOKUMENTA, stranke[postavka.PARTNER] && stranke[postavka.PARTNER].ID_DDV, kontniPlan[postavka.KONTO], parseFloat(postavka.DEBET).toFixed(2), parseFloat(postavka.KREDIT).toFixed(2),postavka.VEZA, postavka.ID_KNJIZBA, postavka.OPIS_DOKUMENTA)

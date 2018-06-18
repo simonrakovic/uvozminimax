@@ -39,7 +39,7 @@ let izdaniRacuni = {}
 let counter = 1
 data.forEach((obj)=>{
 
-  if(obj.SIMBOL === 2 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() < 5){
+  if(obj.SIMBOL === 2 && moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)).month() > 5){
     //console.log(moment(ExcelDateToJSDate(obj.DATUM_DOKUMENTA)))
     if(izdaniRacuni[obj.DOKUMENT])izdaniRacuni[obj.DOKUMENT].push(obj)
     else izdaniRacuni[obj.DOKUMENT] = [obj]
@@ -73,7 +73,7 @@ Object.keys(izdaniRacuni).forEach((key)=>{
   }
 })
 
-fs.writeFile('../Uvozi/izdaniRacuniUvoz.xml',uvoz.toString(),(err)=>{
+fs.writeFile('../Uvozi/izdaniRacuniUvozMANKO.xml',uvoz.toString(),(err)=>{
   if(err)console.log(err)
 })
 
